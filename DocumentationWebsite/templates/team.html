@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block body %}
+	{% for person in team %}
+		<div>
+			<p>{{person["name"]}}</p>
+		</div>
+	{% endfor %}
+{% endblock %}
