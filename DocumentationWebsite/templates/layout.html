@@ -8,12 +8,22 @@
   <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 </head>
 <body>
-	<div class="container">
-		<div class="row">
+	<div class="container-fluid">
+		<div class="row-fluid">
 			<div class="span3">
 				<p>Left span</p>
 			</div>
 			<div class="span6">
+				<div class="navbar">
+				  <div class="navbar-inner">
+				    <a class="brand" href="#">LooneyTunes</a>
+				    <ul class="nav">
+				      <li class="active"><a href="#">Home</a></li>
+				      <li><a href="#">Link</a></li>
+				      <li><a href="#">Link</a></li>
+				    </ul>
+				  </div>
+				</div>
 				<div>
 					<p>Hello, world!</p>
 				</div>
