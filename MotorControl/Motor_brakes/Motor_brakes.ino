@@ -1,7 +1,7 @@
 #include <QuadEncoder.h>
 
 const int BAUD_RATE = 9600;
-
+int moved = 0;
 Quadencoder encoder(2, 3);
 
 const int Motor1Pin1 = 8;
@@ -23,16 +23,16 @@ void loop() {
   if (moved == '>' || moved == '<')
   {
     HaltAndCatchFire();
-    delay(1000);
+    delay(10000);
     ForwardTheLightBrigade();
   }
   else
   {
-    ForwardTheLightBrigade
+    ForwardTheLightBrigade();
   }
 }
 
-ForwardTheLightBrigade()
+void ForwardTheLightBrigade()
 {
   digitalWrite(Motor1Pin1, HIGH);
   digitalWrite(Motor1Pin2, LOW);
@@ -40,7 +40,7 @@ ForwardTheLightBrigade()
   digitalWrite(Motor2Pin2, LOW);    
 }
 
-HaltAndCatchFire()
+void HaltAndCatchFire()
 {
   digitalWrite(Motor1Pin1, LOW);
   digitalWrite(Motor1Pin2, LOW);
