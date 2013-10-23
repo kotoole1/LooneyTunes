@@ -2,10 +2,10 @@
 {% block body %}
 	{% for post in timeline %}
 		<div class="blogPost">
-			<h3>{{ post["title"] }} - {{ post["date"] }}</h3>
+			<h3 class="blogPostTitle">{{ post["title"] }} - {{ post["date"] }}</h3>
 			<p>{{ post["body"] }}</p>
 			{% for imagePath in post["images"].keys() %}
-				<p>{{ imagePath }}</p>
+				<img src="{{url_for('static', filename='images/' + imagePath)}}" />
 				<p>{{ post["images"][imagePath] }}</p>
 			{% endfor %}
 		</div>
