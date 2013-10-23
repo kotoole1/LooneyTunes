@@ -1,4 +1,13 @@
 {% extends "layout.html" %}
 {% block body %}
-	<p>Timeline</p>
+	{% for post in timeline %}
+		<div class="blogPost">
+			<h3>{{ post["title"] }} - {{ post["date"] }}</h3>
+			<p>{{ post["body"] }}</p>
+			{% for imagePath in post["images"].keys() %}
+				<p>{{ imagePath }}</p>
+				<p>{{ post["images"][imagePath] }}</p>
+			{% endfor %}
+		</div>
+	{% endfor %}
 {% endblock %}
