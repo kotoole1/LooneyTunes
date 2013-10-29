@@ -14,10 +14,7 @@ def design():
 
 @app.route("/timeline")
 def timeline():
-	json_timeline_data = open("data/timeline.json")
-	timeline_data = json.load(json_timeline_data)
-	json_timeline_data.close()
-	return render_template("timeline.html", timeline=timeline_data)
+	return render_template("timeline.html")
 
 @app.route("/team")
 def team():

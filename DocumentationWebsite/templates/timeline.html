@@ -1,13 +1,16 @@
 {% extends "layout.html" %}
 {% block body %}
-	{% for post in timeline %}
-		<div class="blogPost">
-			<h3 class="blogPostTitle">{{ post["title"] }} - {{ post["date"] }}</h3>
-			<p>{{ post["body"] }}</p>
-			{% for imagePath in post["images"].keys() %}
-				<img src="{{url_for('static', filename='images/' + imagePath)}}" />
-				<p>{{ post["images"][imagePath] }}</p>
-			{% endfor %}
-		</div>
-	{% endfor %}
+	<div class="blogPost">
+		<h3>Preliminary Design Review - 10.28.13</h3>
+		<iframe class="youtube" src="//www.youtube.com/embed/J1PTjXY7CHs?rel=0" frameborder="0" allowfullscreen></iframe>
+		<iframe class="youtube" src="//www.youtube.com/embed/5m02DnYWyT0?rel=0" frameborder="0" allowfullscreen></iframe>
+		<a href="{{ url_for('static', filename='PDFs/PreliminaryReviewPowerPoint.pdf')}}" target="#">Copy of in-class presentation</a>
+	</div>
+
+	<div class="blogPost">
+		<h3>Initial Thoughts on Mechanical Design - 10.22.13</h3>
+		<img class="picture" src = "{{ url_for('static', filename='images/2013-10-18 10.56.12.jpg')}}" />
+		<img class="picture" src = "{{ url_for('static', filename='images/2013-10-18 10.56.35.jpg')}}" />
+		<img class="picture" src = "{{ url_for('static', filename='images/WindingRender.jpg')}}" />
+	</div>
 {% endblock %}
