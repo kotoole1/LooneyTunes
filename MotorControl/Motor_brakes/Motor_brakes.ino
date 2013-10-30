@@ -2,7 +2,7 @@
 
 const int BAUD_RATE = 9600;
 int moved = 0;
-Quadencoder encoder(2, 3);
+QuadEncoder encoder(2, 3);
 
 const int Motor1Pin1 = 8;
 const int Motor1Pin2 = 9;
