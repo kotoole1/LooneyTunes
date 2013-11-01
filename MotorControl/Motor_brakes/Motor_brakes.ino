@@ -4,6 +4,14 @@ const int BAUD_RATE = 9600;
 int moved = 0;
 QuadEncoder encoder(2, 3);
 
+int ticks;
+int C;
+int D;
+int E;
+int F;
+int G;
+int A;
+
 const int Motor1Pin1 = 8;
 const int Motor1Pin2 = 9;
 const int Motor2Pin1 = 10;

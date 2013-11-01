@@ -5,6 +5,7 @@
 
 .blogPost
 {
+	float: left;
 	padding: 10px;
 	margin-top: 20px; 
 	border-style: solid;
@@ -23,13 +24,19 @@
 /* For any videos we take of the project */
 .youtube
 {
+	/*display: inline;
+	float: left;
+	clear: both;
 	width: 420px;
-	height: 315px;
+	height: 315px;*/
 }
 
 /* For any photos we take of the project */
 .picture
 {
+	/*display: inline;
+	float: left;
+	clear: both;
 	width: 420px;
-	height: 315px;
+	height: 315px;*/
 }
