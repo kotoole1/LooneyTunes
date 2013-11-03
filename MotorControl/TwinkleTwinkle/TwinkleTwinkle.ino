@@ -12,10 +12,9 @@ int G = -27;
 
 void setup()
 {
+  Serial.begin(BAUD_RATE);
   pinMode(Motor1Pin1, OUTPUT);   
   pinMode(Motor1Pin2, OUTPUT); 
-  Serial.begin(BAUD_RATE);
-  delay(1000);
 }
 
 int ticks = 0;
@@ -23,15 +22,13 @@ boolean firstTime = true;
 
 void loop()
 {
-  /*
   if (firstTime)
   {
     Serial.println("Ready");
     //Hot Cross Buns Song
-    //Go to beginning of song - B note
-    MoveStringOne(G, B);
-    /*
+    //Go to beginning of song - B not
     delay(1000);
+    Serial.println("Starting song");
     //B
     //A
     MoveStringOne(B, A);
@@ -62,23 +59,7 @@ void loop()
     MoveStringOne(A, G);
     delay(4000);
     firstTime = false;
-  }*/
-  
-  int moved = encoder.tick();
-  if (moved == '>' || moved == '<')
-  {
-    ticks += 1;
-    Serial.println(ticks);
-    digitalWrite(Motor1Pin1, LOW);
-    digitalWrite(Motor1Pin2, LOW); 
-    delay(1000);
   }
-  else
-  {
-    digitalWrite(Motor1Pin1, HIGH);
-    digitalWrite(Motor1Pin2, LOW); 
-  }
-  
 }
 
 void MoveStringOne(int current, int next)
@@ -107,8 +88,7 @@ void MoveString(int isUp){
     TightenString();
   } else {
     LoosenString();
-  }
-  
+  }  
 }
 
 void HoldString(){

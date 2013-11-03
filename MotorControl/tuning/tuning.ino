@@ -7,10 +7,6 @@ Negetive values are supported
 
 const int BAUD_RATE = 9600;
 QuadEncoder encoder(1, 2);
-char message[4];
-int ticksToMove;
-int index;
-int ticks;
 const int Motor1Pin1 = 8;
 const int Motor1Pin2 = 9;
 
@@ -21,73 +17,91 @@ void setup()
   pinMode(Motor1Pin2, OUTPUT); 
 }
 
-void MoveString(char message[])
+void MoveString(int ticksToMove)
 {
-  ticksToMove = atoi(message);
-  Serial.print("Read: ");
-  Serial.println(message);
-  ticks = 0;
-  
-  if (ticksToMove > 0)
+  int failTime = 10000; // 10 seconds
+  int failTimer = millis();
+  int ticks = 0;
+  while (ticks < abs(ticksToMove))
   {
-    Serial.println("positive");
-    TightenString(ticksToMove);
-  }
-  else
-  {
-    Serial.println("negative");
-    LoosenString(ticksToMove);
-  }
-   
-  int moved = encoder.tick();
-  if (moved == '>' || moved == '<')
-  {
-    ticks += 1;
-    Serial.println(ticks);
-  }
-  
-  if (ticks >= ticksToMove)
-  {
+    if (millis() - failTimer > failTime)
+    {
+      Serial.println("Stalled trying to move the motor");
+      return;
+    }
     
-    digitalWrite(Motor1Pin1, LOW);
-    digitalWrite(Motor1Pin2, LOW); 
+    if (ticksToMove > 0)
+    {
+      TightenString(Motor1Pin1, Motor1Pin2);  
+    }
+    else
+    {
+      LoosenString(Motor1Pin1, Motor1Pin2);   
+    }
+    
+    int moved = encoder.tick();
+    if (moved == '>' || moved == '<')
+    {
+      ticks += 1;
+    }
   }
+  
+  HoldString(Motor1Pin1, Motor1Pin2);
+  Serial.print("Finished moving string ");
+  Serial.print(ticksToMove);
+  Serial.println(" ticks");
 }
 
-void TightenString(int ticksToMove){
-  digitalWrite(Motor1Pin1, HIGH);
-  digitalWrite(Motor1Pin2, LOW);
+void TightenString(int pin1, int pin2)
+{
+  digitalWrite(pin1, HIGH);
+  digitalWrite(pin2, LOW);
 }
 
-void LoosenString(int ticksToMove){
-  digitalWrite(Motor1Pin1, LOW);
-  digitalWrite(Motor1Pin2, HIGH);
+void LoosenString(int pin1, int pin2)
+{
+  digitalWrite(pin1, LOW);
+  digitalWrite(pin2, HIGH);
+}
+
+void HoldString(int pin1, int pin2)
+{
+  digitalWrite(pin1, LOW);
+  digitalWrite(pin2, LOW); 
 }
   
 void loop()
 {
   if (Serial.available())
   {
+    int index = 0;
+    char message[4];
+    
+    // Erase what was previously in the buffer
     for (int i = 0; i < 4; i++)
     {
       message[i] = '\0';  
     }
+    
+    // Wait for the entire message to fill the buffer
     delay(100);
+    
+    // Read from the buffer
     while(Serial.available())
     {
+      // Read the first 3 values in the buffer
       if (index < 3)
       {
         message[index] = Serial.read();
         index++;
       }
+      // And truncate the rest of the values
       else
       {
-        Serial.read(); 
+        Serial.flush(); 
       }
-    }  
-   
-    
-    MoveString(message);
-    index = 0;
+    }
+    // Move the string according to how many ticks message specifies
+    MoveString(atoi(message));
   }
 }
