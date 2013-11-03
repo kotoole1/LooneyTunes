@@ -17,8 +17,10 @@ void setup()
   Serial.begin(BAUD_RATE);
   delay(1000);
 }
+
 int ticks = 0;
 boolean firstTime = true;
+
 void loop()
 {
   /*
