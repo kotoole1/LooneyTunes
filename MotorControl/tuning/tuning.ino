@@ -19,14 +19,15 @@ void setup()
 
 void MoveString(int ticksToMove)
 {
-  int failTime = 10000; // 10 seconds
-  int failTimer = millis();
+  long failTime = 10000; // 10 seconds
+  long failTimer = millis();
   int ticks = 0;
   while (ticks < abs(ticksToMove))
   {
     if (millis() - failTimer > failTime)
     {
       Serial.println("Stalled trying to move the motor");
+      HoldString(Motor1Pin1, Motor1Pin2);
       return;
     }
     
@@ -102,6 +103,7 @@ void loop()
       }
     }
     // Move the string according to how many ticks message specifies
+    Serial.println(atoi(message));
     MoveString(atoi(message));
   }
 }

@@ -7,8 +7,8 @@ const int Motor1Pin1 = 8;
 const int Motor1Pin2 = 9;
 
 int B = 0;
-int A = -15;
-int G = -27;
+int A = -13;
+int G = -26;
 
 void setup()
 {
@@ -31,83 +31,97 @@ void loop()
     Serial.println("Starting song");
     //B
     //A
-    MoveStringOne(B, A);
+    MoveString(B, A);
+    Serial.println("A");
     delay(1000);
     //G
-    MoveStringOne(A, G);
+    MoveString(A, G);
+    Serial.println("G");
     delay(2000);
     //B
-    MoveStringOne(G, B);
+    MoveString(G, B);
+    Serial.println("B");
     delay(1000);
     //A
-    MoveStringOne(B, A);
+    MoveString(B, A);
+    Serial.println("A");
     delay(1000);
     //G
-    MoveStringOne(A, G);
+    MoveString(A, G);
+    Serial.println("G");
     delay(3000);
     //G, G, G, G
     //A, A, A, A
-    MoveStringOne(G, A);
+    MoveString(G, A);
+    Serial.println("A");
     delay(1000);
     //B
-    MoveStringOne(A, B);
+    MoveString(A, B);
+    Serial.println("B");
     delay(1000);
     //A
-    MoveStringOne(B, A);
+    MoveString(B, A);
+    Serial.println("A");
     delay(1000);
     //G
-    MoveStringOne(A, G);
+    MoveString(A, G);
+    Serial.println("G");
     delay(4000);
     firstTime = false;
   }
 }
 
-void MoveStringOne(int current, int next)
+void MoveString(int current, int next)
 {
+  int ticksToMove = next - current;
+  long failTime = 10000; // 10 seconds
+  long failTimer = millis();
   int ticks = 0;
-  int moved = 0;
-  int totalTicks = next - current;
-  boolean isUp = (totalTicks > 0); 
-  
-  
-  while (ticks < totalTicks)
+  while (ticks < abs(ticksToMove))
   {
-    MoveString(isUp);
-    moved = encoder.tick();
+    if (millis() - failTimer > failTime)
+    {
+      Serial.println("Stalled trying to move the motor");
+      HoldString(Motor1Pin1, Motor1Pin2);
+      return;
+    }
+    
+    if (ticksToMove > 0)
+    {
+      TightenString(Motor1Pin1, Motor1Pin2);  
+    }
+    else
+    {
+      LoosenString(Motor1Pin1, Motor1Pin2);   
+    }
+    
+    int moved = encoder.tick();
     if (moved == '>' || moved == '<')
     {
       ticks += 1;
     }
   }
-  HoldString();
+  
+  HoldString(Motor1Pin1, Motor1Pin2);
+  Serial.print("Finished moving string ");
+  Serial.print(ticksToMove);
+  Serial.println(" ticks");
 }
 
-void MoveString(int isUp){
-  
-  if(isUp){
-    TightenString();
-  } else {
-    LoosenString();
-  }  
+void TightenString(int pin1, int pin2)
+{
+  digitalWrite(pin1, HIGH);
+  digitalWrite(pin2, LOW);
 }
 
-void HoldString(){
-  
-  digitalWrite(Motor1Pin1, LOW);
-  digitalWrite(Motor1Pin2, LOW);
-
+void LoosenString(int pin1, int pin2)
+{
+  digitalWrite(pin1, LOW);
+  digitalWrite(pin2, HIGH);
 }
 
-void TightenString() {
-  
-  digitalWrite(Motor1Pin1, HIGH);
-  digitalWrite(Motor1Pin2, LOW);
-  
-}
-
-void LoosenString() {
-  
-  digitalWrite(Motor1Pin1, LOW);
-  digitalWrite(Motor1Pin2, HIGH);
-  
+void HoldString(int pin1, int pin2)
+{
+  digitalWrite(pin1, LOW);
+  digitalWrite(pin2, LOW); 
 }
