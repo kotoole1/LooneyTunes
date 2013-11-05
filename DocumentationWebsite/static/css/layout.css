@@ -24,6 +24,11 @@
 /* For any videos we take of the project */
 .youtube
 {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 420px;
+	height: 315px;
 	/*display: inline;
 	float: left;
 	clear: both;
@@ -34,6 +39,9 @@
 /* For any photos we take of the project */
 .picture
 {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 	/*display: inline;
 	float: left;
 	clear: both;

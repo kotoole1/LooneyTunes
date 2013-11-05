@@ -27,8 +27,8 @@ void loop()
     Serial.println("Ready");
     //Hot Cross Buns Song
     //Go to beginning of song - B not
-    delay(1000);
     Serial.println("Starting song");
+    delay(1000);
     //B
     //A
     MoveString(B, A);
