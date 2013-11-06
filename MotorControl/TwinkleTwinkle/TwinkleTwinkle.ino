@@ -7,7 +7,7 @@ const int Motor1Pin1 = 8;
 const int Motor1Pin2 = 9;
 
 int B = 0;
-int A = -13;
+int A = -1;
 int G = -26;
 
 void setup()
