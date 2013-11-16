@@ -40,7 +40,7 @@ function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2)
 	 * @param volume: A float between 0 and 1 that corresponds with how hard the
 	 *        string is pushed into the horse hair
 	 */
-	this.Play = function (volume)
+	this.SetVolume = function (volume)
 	{
 		b.analogWrite(this.servoPin, volume, SERVO_WRITE_FREQ);
 		console.log("Hello");
@@ -52,15 +52,33 @@ function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2)
 	 */
 	this.SetNote = function (note)
 	{
+		// Check if the note is higher or lower than the current position
 
+		b.digitalWrite(motorPin1, 0);
+		b.digitalWrite(motorPin2, 1);
+
+		b.digitalWrite(motorPin1, 1);
+		b.digitalWrite(motorPin2, 0, this.SetNoteCallback);
+	};
+
+	/* Moniters the state of the string via the encoder to determine when the 
+	 * desired tautness has been reached
+	 */
+	this.SetNoteCallback = function ()
+	{
+		// Update encoder count
+
+		// Shut down the motors
+		b.digitalWrite(motorPin1, 0);
+		b.digitalWrite(motorPin2, 0);
 	};
 }
 
 // Test code
 var looney = new Looney('P9_14', 0, 0, 0, 0);
 
-setTimeout(function() {looney.Play(SILENT);}, 1000);
-setTimeout(function() {looney.Play(PIANO);}, 2000);
-setTimeout(function() {looney.Play(MEZZO_PIANO);}, 3000);
-setTimeout(function() {looney.Play(MEZZO_FORTE);}, 4000);
-setTimeout(function() {looney.Play(FORTE);}, 5000);
+setTimeout(function() {looney.SetVolume(SILENT);}, 1000);
+setTimeout(function() {looney.SetVolume(PIANO);}, 2000);
+setTimeout(function() {looney.SetVolume(MEZZO_PIANO);}, 3000);
+setTimeout(function() {looney.SetVolume(MEZZO_FORTE);}, 4000);
+setTimeout(function() {looney.SetVolume(FORTE);}, 5000);
