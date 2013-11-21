@@ -4,16 +4,7 @@
  */
 
 var b = require('bonescript');
-
-// Constants for servo control
-var SERVO_WRITE_FREQ = 300; // Hertz
-
-// Constants for volume control should take values between zero and one
-var SILENT = 0;
-var PIANO = 0.25;
-var MEZZO_PIANO = 0.5
-var MEZZO_FORTE = 0.75;
-var FORTE = 1;
+var constants = require('./Constants.js')
 
 /* Object contructor. Looney objects will each be responsible controlling for 
  * a single string
@@ -30,11 +21,40 @@ var FORTE = 1;
  */ 
 function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2) 
 {
+	// Set pins and pin modes
 	this.servoPin = servoPin;
 	this.motorPin1 = motorPin1;
 	this.motorPin2 = motorPin2;
 	this.encoderPin1 = encoderPin1;
 	this.encoderPin2 = encoderPin2;
+
+	// b.pinMode(encoderPin1, b.OUTPUT);
+	// b.pinMode(encoderPin2, b.OUTPUT);
+	// b.digitalWrite(encoderPin1, b.HIGH);
+	// b.digitalWrite(encoderPin2, b.HIGH);
+
+	// Don't set the pin mode for the servo pins because it messes things up for
+	// some reason...
+	b.pinMode(motorPin1, b.OUTPUT);
+	b.pinMode(motorPin2, b.OUTPUT);
+	b.pinMode(encoderPin1, b.INPUT);
+	b.pinMode(encoderPin2, b.INPUT);
+
+	_notes = {}
+
+
+	/* Add a note that this string will be able to play
+	 * @param note: A string representation of the note that the string will be
+	 *        able to play, e.g. 'A1' or 'B5'
+	 * @param ticks: The number of ticks away from the base note of the string 
+	 *        that the note parameter is. For instance, if the base note of the
+	 *        string is 'A4', then _notes will contain 'A4' : 0. If 'B4' is 5 
+	 *        ticks higher than 'A4', then _notes will contain 'B4' : 4
+	 */
+	this.AddNote = function (note, ticks)
+	{
+		_notes[note] = ticks;
+	}
 
 	/* Move the string into contact with the horse hair
 	 * @param volume: A float between 0 and 1 that corresponds with how hard the
@@ -42,7 +62,7 @@ function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2)
 	 */
 	this.SetVolume = function (volume)
 	{
-		b.analogWrite(this.servoPin, volume, SERVO_WRITE_FREQ);
+		b.analogWrite(this.servoPin, volume, constants.SERVO_WRITE_FREQ);
 		console.log("Hello");
 	};
 
@@ -58,7 +78,8 @@ function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2)
 		b.digitalWrite(motorPin2, 1);
 
 		b.digitalWrite(motorPin1, 1);
-		b.digitalWrite(motorPin2, 0, this.SetNoteCallback);
+		setTimeout(function() {looney.SetNoteCallback()}, 500)
+		//b.digitalWrite(motorPin2, 0, this.SetNoteCallback);
 	};
 
 	/* Moniters the state of the string via the encoder to determine when the 
@@ -74,11 +95,6 @@ function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2)
 	};
 }
 
-// Test code
-var looney = new Looney('P9_14', 0, 0, 0, 0);
-
-setTimeout(function() {looney.SetVolume(SILENT);}, 1000);
-setTimeout(function() {looney.SetVolume(PIANO);}, 2000);
-setTimeout(function() {looney.SetVolume(MEZZO_PIANO);}, 3000);
-setTimeout(function() {looney.SetVolume(MEZZO_FORTE);}, 4000);
-setTimeout(function() {looney.SetVolume(FORTE);}, 5000);
+// Export the constructor for the violin string object. It can be accessed in
+// other files by require('./Looney.js');
+module.exports.Looney = Looney;
