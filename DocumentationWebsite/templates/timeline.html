@@ -3,10 +3,10 @@
 	<div class="panel panel-default">
 		<h3>Critical Design Review - 11.19.13</h3>
 		<p>The goal for this design review was to make sure we had all of our critical subsystems working, or at least we have an idea of how to solve the critical problems.</p>
-		<p>Our critical subsystems included: transition from 1 string to 4 strings, addition of an amplifier, making sure the "string pulling" system works, and finally having all connections through the BeagleBone. We were able to have all of our critical subsystems ready. We were not able to get our bow wheel ready; however, we . </p>
-		<img class="picture" src = "{{ url_for('static', filename='images/2013-10-18 10.56.12.jpg')}}" />
-		<img class="picture" src = "{{ url_for('static', filename='images/2013-10-18 10.56.35.jpg')}}" />
-		<img class="picture" src = "{{ url_for('static', filename='images/WindingRender.jpg')}}" />
+		<p>Our critical subsystems included: transition from 1 string to 4 strings, addition of an amplifier, making sure the "string pulling" system works, and finally having all connections through the BeagleBone. We were able to have all of our critical subsystems ready. We were not able to get our bow wheel ready; however, we believed that our bow wheel was not a critical subsystem. </p>
+		<img class="picture" src = "{{ url_for('static', filename='images/1stPrototype.jpg')}}" />
+		<p>Most of the feedback we've received from our design review were concerns about our bow wheel. Turns out that our bow wheel was a critical subsystem that we needed to find a solution to fast.</p>
+		<p>For our bow, we believe we can apply the same characteristics from the bow of a hurdy gurdy to our bow.</p>
 	</div>
 
 	<div class="panel panel-default">
@@ -21,9 +21,9 @@
 
 	<div class="panel panel-default">
 		<h3>Initial Thoughts on Mechanical Design - 10.22.13</h3>
-		<p>This is a descriptive paragraph!</p>
+		<p>Below are some of our initial ideas and testing of the tensioning of the string of our mechanical subsystem. We've decided to go with a worm gear to prevent back driving of the motor.</p>
+		<img class="picture" src = "{{ url_for('static', filename='images/WindingRender.jpg')}}" />
 		<img class="picture" src = "{{ url_for('static', filename='images/2013-10-18 10.56.12.jpg')}}" />
 		<img class="picture" src = "{{ url_for('static', filename='images/2013-10-18 10.56.35.jpg')}}" />
-		<img class="picture" src = "{{ url_for('static', filename='images/WindingRender.jpg')}}" />
 	</div>
 {% endblock %}
