@@ -36,7 +36,6 @@ function QuadEncoder(pin1, pin2)
 	  // console.log('_val1: ' + _val1);
 	  // console.log('_val2: ' + _val2);
 
-	  // Detect changes
 	  if ( _val1 != _oldVal1 || _val2 != _oldVal2) 
 	  {
 	    _oldVal1 = _val1;
@@ -66,29 +65,24 @@ function QuadEncoder(pin1, pin2)
 	      }
 	    }
 	    
+	    console.log(_pos);
 	    _turn = _pos - _oldPos;
 	    _oldPos = _pos;
 	    if (Math.abs(_turn) != 2) 
 	    {
-	      if (_turn == 1 || _turn == -3)
-	      {
-	        _turnCount++;
-	      }
-	      else if (_turn == -1 || _turn == 3)
-	      {
-	        _turnCount--;
-	      }
+	      if (_turn == 1 || _turn == -3) { _turnCount++; }
+	      else if (_turn == -1 || _turn == 3) { _turnCount--; }
 	    }
 	    
-	    if (_pos==0)
-	    {
-	      if (_turnCount>0)
+	    if (_pos == 0)
+	    { 
+	      if (_turnCount > 0)
 	      {
-	        _turnCount=0;
+	        _turnCount = 0;
 					_moved = true;
 	        return '>';
 	      } 
-	      else if (_turnCount<0)
+	      else if (_turnCount < 0)
 	      {
 	      	_moved = true;
 	        _turnCount=0;
@@ -98,14 +92,14 @@ function QuadEncoder(pin1, pin2)
 	    else 
 	    {
 				_moved = false;
-	      _turnCount=0;
+	      _turnCount = 0;
 	      return '-';
 	    }
   	}
   	else 
     {
 			_moved = false;
-      _turnCount=0;
+      _turnCount = 0;
       return '-';
     }
   }

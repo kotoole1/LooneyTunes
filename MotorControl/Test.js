@@ -15,8 +15,11 @@ var encoderPin1 = 'P8_7';
 var encoderPin2 = 'P8_9';
 var enc = new q.QuadEncoder(encoderPin1, encoderPin2);
 
+var lefts = 0;
+var rights = 0;
+console.log("Give it half a second");
 TestEncoder();
-
+console.log("Go!");
 
 function TestServo()
 {
@@ -33,16 +36,22 @@ function TestServo()
 
 function TestEncoder()
 {
-	var testEncoderReads = setInterval(function(){ReadEncoder()}, 100);
-	setTimeout(function(){clearInterval(testEncoderReads);}, 5000);
+	var testEncoderReads = setInterval(function(){ReadEncoder()}, 0.01);
+	setTimeout(function(){clearInterval(testEncoderReads); console.log("lefts: " + lefts); console.log("rights: " + rights);}, 10000);
 
 	var ReadEncoder = function () 
 	{
-		var pin1Value = b.digitalRead(encoderPin1);
-		var pin2Value = b.digitalRead(encoderPin2);
-
-		console.log(pin1Value + ", " + pin2Value);
-		console.log(enc.tick() + "\n");
+		var ticked = enc.tick();
+		if (ticked == '>')
+		{
+			lefts++;
+			console.log(ticked);
+		}
+		else if (ticked == '<')
+		{
+			rights++;
+			console.log(ticked);
+		}
 	}
 }
 
