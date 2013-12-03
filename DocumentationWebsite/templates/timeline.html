@@ -1,17 +1,29 @@
 {% extends "layout.html" %}
 {% block body %}
 	<div class="panel panel-default">
+		<h3>Critical Design Review - 11.19.13</h3>
+		<p>The goal for this design review was to make sure we had all of our critical subsystems working, or at least we have an idea of how to solve the critical problems.</p>
+		<p>Our critical subsystems included: transition from 1 string to 4 strings, addition of an amplifier, making sure the "string pulling" system works, and finally having all connections through the BeagleBone. We were able to have all of our critical subsystems ready. We were not able to get our bow wheel ready; however, we believed that our bow wheel was not a critical subsystem. </p>
+		<img class="picture" src = "{{ url_for('static', filename='images/1stPrototype.jpg')}}" />
+		<p>Most of the feedback we've received from our design review were concerns about our bow wheel. Turns out that our bow wheel was a critical subsystem that we needed to find a solution to fast.</p>
+		<p>For our bow, we believe we can apply the same characteristics from the bow of a hurdy gurdy to our bow.</p>
+	</div>
+
+	<div class="panel panel-default">
 		<h3>Preliminary Design Review - 10.28.13</h3>
-		<iframe class="youtube" src="//www.youtube.com/embed/J1PTjXY7CHs?rel=0" frameborder="0" allowfullscreen></iframe>
-		<iframe class="youtube" src="//www.youtube.com/embed/5m02DnYWyT0?rel=0" frameborder="0" allowfullscreen></iframe>
+		<p>For this preliminary design review, we talked about our design goals, our three main mechanical, electrical, and software subsystems, and our schedule for this final project. Some of our goals include: we will create a string instrument that is controlled and played mechanically, the instrument will be capable of playing music that a traditional violin cannot play (e.g. chords and large interval gaps), and the system will connect to an engaging interface for listerners to choose songs from.</p>
+		<p>Before throwing ourselves into working on the three separate subsystems, some major design decisions had to be made. We decided that we would control the pitch of the strings by means of changing the tension of the string, instead of having set pressers to press down on the strings to change the pitch. We also decided to use a BeagleBone as our microcontroller because of the vast amount of pins it has.</p>
+		<p>From all these decisions and subsystems, we've decided that the most critical part of our system is being able to change the pitch of the string by means of changing the tension of the string. Hence for our Preliminary Design Review, we made sure to have a working tension system to showcase. Below attached is our PowerPoint of our presentation for the design review. Also, below are two video examples of our tensioning of the strings.</p>
 		<a href="{{ url_for('static', filename='PDFs/PreliminaryReviewPowerPoint.pdf')}}" target="#">Copy of in-class presentation</a>
+		<iframe class="youtube" src="//www.youtube.com/embed/J1PTjXY7CHs?rel=0" frameborder="0" allowfullscreen></iframe>
+		<iframe class="youtube" src="//www.youtube.com/embed/5m02DnYWyT0?rel=0" frameborder="0" allowfullscreen></iframe>	
 	</div>
 
 	<div class="panel panel-default">
 		<h3>Initial Thoughts on Mechanical Design - 10.22.13</h3>
-		<p>This is a descriptive paragraph!</p>
+		<p>Below are some of our initial ideas and testing of the tensioning of the string of our mechanical subsystem. We've decided to go with a worm gear to prevent back driving of the motor.</p>
+		<img class="picture" src = "{{ url_for('static', filename='images/WindingRender.jpg')}}" />
 		<img class="picture" src = "{{ url_for('static', filename='images/2013-10-18 10.56.12.jpg')}}" />
 		<img class="picture" src = "{{ url_for('static', filename='images/2013-10-18 10.56.35.jpg')}}" />
-		<img class="picture" src = "{{ url_for('static', filename='images/WindingRender.jpg')}}" />
 	</div>
 {% endblock %}
