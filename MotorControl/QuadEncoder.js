@@ -2,7 +2,7 @@
  * Franklin W. Olin College of Engineering
  * Kyle McConnaughay, Kevin O'Toole, Chris Joyce, Allie Dunca, Philicia Chow
  *
- * Template for this class was taken from medecau: 
+ * Template for this class was taken from medecaukey: "value",  
  * https://github.com/medecau/QuadEncoder/blob/master/QuadEncoder.cpp
  */
 
@@ -29,14 +29,12 @@ function QuadEncoder(pin1, pin2)
 
   this.tick = function () 
   {
-  	console.log('Entering tick()');
-
   	_moved = false;
 	  _val1 = b.digitalRead(_inputPin1);
 	  _val2 = b.digitalRead(_inputPin2);
 
-	  console.log('_val1: ' + _val1);
-	  console.log('_val2: ' + _val2);
+	  // console.log('_val1: ' + _val1);
+	  // console.log('_val2: ' + _val2);
 
 	  // Detect changes
 	  if ( _val1 != _oldVal1 || _val2 != _oldVal2) 
@@ -70,7 +68,7 @@ function QuadEncoder(pin1, pin2)
 	    
 	    _turn = _pos - _oldPos;
 	    _oldPos = _pos;
-	    if (abs(_turn) != 2) 
+	    if (Math.abs(_turn) != 2) 
 	    {
 	      if (_turn == 1 || _turn == -3)
 	      {
@@ -84,7 +82,6 @@ function QuadEncoder(pin1, pin2)
 	    
 	    if (_pos==0)
 	    {
-	    	console.log('Entering last if statement');
 	      if (_turnCount>0)
 	      {
 	        _turnCount=0;
@@ -97,6 +94,12 @@ function QuadEncoder(pin1, pin2)
 	        _turnCount=0;
 	        return '<';
 	      } 
+	    }
+	    else 
+	    {
+				_moved = false;
+	      _turnCount=0;
+	      return '-';
 	    }
   	}
   	else 

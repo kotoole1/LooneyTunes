@@ -5,6 +5,7 @@
 
 // Constants for servo control
 module.exports.SERVO_WRITE_FREQ = 300; // Hertz
+module.exports.DUTY_CYCLE_MIN = 0.03; // In the range [0, 1]
 
 // Constants for volume control should take values between zero and one because
 // the position of the servo is controlled by the duty cycle of the PWM write

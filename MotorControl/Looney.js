@@ -33,15 +33,14 @@ function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2)
 	// b.digitalWrite(encoderPin1, b.HIGH);
 	// b.digitalWrite(encoderPin2, b.HIGH);
 
-	// Don't set the pin mode for the servo pins because it messes things up for
-	// some reason...
+	b.pinMode(servoPin, b.OUTPUT);
 	b.pinMode(motorPin1, b.OUTPUT);
 	b.pinMode(motorPin2, b.OUTPUT);
 	b.pinMode(encoderPin1, b.INPUT);
 	b.pinMode(encoderPin2, b.INPUT);
 
-	_notes = {}
-
+	var _notes = {}
+	var _servoPosition = 0;
 
 	/* Add a note that this string will be able to play
 	 * @param note: A string representation of the note that the string will be
