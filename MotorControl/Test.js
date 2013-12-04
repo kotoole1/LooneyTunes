@@ -19,7 +19,7 @@ var lefts = 0;
 var rights = 0;
 console.log("Give it half a second");
 TestEncoder();
-console.log("Go!");
+console.log("Wheeeee!");
 
 function TestServo()
 {

@@ -31,28 +31,6 @@ void loop() {
   if (moved == '>' || moved == '<')
   {
     Serial.write("tick!");
-    HaltAndCatchFire();
-    delay(10000);
-    ForwardTheLightBrigade();
-  }
-  else
-  {
-    ForwardTheLightBrigade();
   }
 }
 
-void ForwardTheLightBrigade()
-{
-  digitalWrite(Motor1Pin1, HIGH);
-  digitalWrite(Motor1Pin2, LOW);
-  digitalWrite(Motor2Pin1, HIGH);
-  digitalWrite(Motor2Pin2, LOW);    
-}
-
-void HaltAndCatchFire()
-{
-  digitalWrite(Motor1Pin1, LOW);
-  digitalWrite(Motor1Pin2, LOW);
-  digitalWrite(Motor2Pin1, LOW);
-  digitalWrite(Motor2Pin2, LOW);
-}
