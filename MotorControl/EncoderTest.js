@@ -36,5 +36,5 @@ function TestServo()
 
 function TestEncoder()
 {
-	setTimeout(function(){enc.dispose();}, 10000);
+	setTimeout(function(){enc.dispose();}, 100000);
 }
