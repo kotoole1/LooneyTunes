@@ -7,7 +7,7 @@ var b = require('bonescript');
 var constants = require('./Constants.js');
 var q = require('./BetterQuadEncoder.js');
 var s = require('./Servo.js');
-var m = require('./BetterMotor.js');
+var m = require('./Motor.js');
 
 /* Object contructor. Looney objects will each be responsible controlling for 
  * a single string
@@ -28,20 +28,7 @@ function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2)
 	this.motor = new m.Motor(motorPin1, motorPin2);
 	this.quadEncoder = new q.QuadEncoder(encoderPin1, encoderPin2);
 
-
-	// b.pinMode(encoderPin1, b.OUTPUT);
-	// b.pinMode(encoderPin2, b.OUTPUT);
-	// b.digitalWrite(encoderPin1, b.HIGH);
-	// b.digitalWrite(encoderPin2, b.HIGH);
-
-	b.pinMode(servoPin, b.OUTPUT);
-	b.pinMode(motorPin1, b.OUTPUT);
-	b.pinMode(motorPin2, b.OUTPUT);
-	b.pinMode(encoderPin1, b.INPUT);
-	b.pinMode(encoderPin2, b.INPUT);
-
 	var _notes = {}
-	var _servoPosition = 0;
 
 	/* Add a note that this string will be able to play
 	 * @param note: A string representation of the note that the string will be

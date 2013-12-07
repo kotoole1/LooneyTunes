@@ -61,7 +61,7 @@ function BetterQuadEncoder (pin1, pin2)
 	    
     //for each pair there's a position out of four
     if ( _val1 == 1 ) 
-    {// stationary position
+    { // stationary position
       if (_val2 == 1)
       {
         _pos = 0;
@@ -158,7 +158,7 @@ function BetterQuadEncoder (pin1, pin2)
 
 	 console.log("absolute position: " + _absPos);
 	 return _absPos;
-	 
+
 	}
 
 	this.dispose = function()
