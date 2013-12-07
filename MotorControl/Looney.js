@@ -4,7 +4,10 @@
  */
 
 var b = require('bonescript');
-var constants = require('./Constants.js')
+var constants = require('./Constants.js');
+var q = require('./BetterQuadEncoder.js');
+var s = require('./Servo.js');
+var m = require('./BetterMotor.js');
 
 /* Object contructor. Looney objects will each be responsible controlling for 
  * a single string
@@ -21,12 +24,10 @@ var constants = require('./Constants.js')
  */ 
 function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2) 
 {
-	// Set pins and pin modes
-	this.servoPin = servoPin;
-	this.motorPin1 = motorPin1;
-	this.motorPin2 = motorPin2;
-	this.encoderPin1 = encoderPin1;
-	this.encoderPin2 = encoderPin2;
+	this.servo = new s.Servo(servoPin);
+	this.motor = new m.Motor(motorPin1, motorPin2);
+	this.quadEncoder = new q.QuadEncoder(encoderPin1, encoderPin2);
+
 
 	// b.pinMode(encoderPin1, b.OUTPUT);
 	// b.pinMode(encoderPin2, b.OUTPUT);

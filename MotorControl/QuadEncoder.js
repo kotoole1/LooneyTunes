@@ -66,6 +66,8 @@ function QuadEncoder(pin1, pin2)
 	    }
 	    
 	    console.log(_pos);
+	    console.log(_val1 + ", " + _val2)
+	    
 	    _turn = _pos - _oldPos;
 	    _oldPos = _pos;
 	    if (Math.abs(_turn) != 2) 
