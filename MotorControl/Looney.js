@@ -5,7 +5,7 @@
 
 var b = require('bonescript');
 var constants = require('./Constants.js');
-var q = require('./BetterQuadEncoder.js');
+var q = require('./QuadEncoder.js');
 var s = require('./Servo.js');
 var m = require('./Motor.js');
 
@@ -61,11 +61,8 @@ function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2)
 	{
 		// Check if the note is higher or lower than the current position
 
-		b.digitalWrite(motorPin1, 0);
-		b.digitalWrite(motorPin2, 1);
-
-		b.digitalWrite(motorPin1, 1);
-		setTimeout(function() {looney.SetNoteCallback()}, 500)
+		this.motor.Tighten();
+		setTimeout(function() {looney.SetNoteCallback()}, 1000)
 		//b.digitalWrite(motorPin2, 0, this.SetNoteCallback);
 	};
 
@@ -77,8 +74,7 @@ function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2)
 		// Update encoder count
 
 		// Shut down the motors
-		b.digitalWrite(motorPin1, 0);
-		b.digitalWrite(motorPin2, 0);
+		this.motor.Hold();
 	};
 }
 

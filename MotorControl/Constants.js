@@ -14,3 +14,9 @@ module.exports.PIANO = 0.25;
 module.exports.MEZZO_PIANO = 0.5
 module.exports.MEZZO_FORTE = 0.75;
 module.exports.FORTE = 1;
+
+module.exports.Looney1ServoPin = 'P8_5';
+module.exports.Looney1QuadEncoderPin1 = 'P8_7';
+module.exports.Looney1QuadEncoderPin2 = 'P8_9';
+module.exports.Looney1MotorPin1 = 'P8_11';
+module.exports.Looney1MotorPin2 = 'P8_13';

@@ -16,8 +16,23 @@ function Motor (motorPin1, motorPin2)
 	b.pinMode(pin2, b.OUTPUT);
 
 	// configure pins as outputs
-	b.digitalWrite(motor1, b.HIGH);
-	b.digitalWrite(motor1, b.HIGH);
+	b.digitalWrite(pin1, b.HIGH);
+	b.digitalWrite(pin2, b.HIGH);
+
+	this.Tighten = function () {
+		b.digitalWrite(pin1, b.HIGH);
+		b.digitalWrite(pin2, b.LOW);
+	}
+
+	this.Loosen = function () {
+		b.digitalWrite(pin1, b.LOW);
+		b.digitalWrite(pin2, b.HIGH);
+	}
+
+	this.Hold = function () {
+		b.digitalWrite(pin1, b.LOW);
+		b.digitalWrite(pin2, b.LOW);
+	}
 }
 
 module.exports.Motor = Motor;
