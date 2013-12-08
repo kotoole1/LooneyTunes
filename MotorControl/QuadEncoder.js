@@ -1,6 +1,6 @@
 /* Looney Tunes - POE Final Project Fall 2013
  * Franklin W. Olin College of Engineering
- * Kyle McConnaughay, Kevin O'Toole, Chris Joyce, Allie Dunca, Philicia Chow
+ * Kyle McConnaughay, Kevin O'Toole, Chris Joyce, Allie Duncan, Philicia Chow
  *
  * Template for this class was taken from medecaukey: "value",  
  * https://github.com/medecau/QuadEncoder/blob/master/QuadEncoder.cpp
