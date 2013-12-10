@@ -9,6 +9,8 @@ var constants = require('./Constants.js');
 
 function Motor (motorPin1, motorPin2)
 {
+	var self = this;
+
 	var pin1 = motorPin1;
 	var pin2 = motorPin2;
 
@@ -19,17 +21,17 @@ function Motor (motorPin1, motorPin2)
 	b.digitalWrite(pin1, b.HIGH);
 	b.digitalWrite(pin2, b.HIGH);
 
-	this.Tighten = function () {
+	self.Tighten = function () {
 		b.digitalWrite(pin1, b.HIGH);
 		b.digitalWrite(pin2, b.LOW);
 	}
 
-	this.Loosen = function () {
+	self.Loosen = function () {
 		b.digitalWrite(pin1, b.LOW);
 		b.digitalWrite(pin2, b.HIGH);
 	}
 
-	this.Hold = function () {
+	self.Hold = function () {
 		b.digitalWrite(pin1, b.LOW);
 		b.digitalWrite(pin2, b.LOW);
 	}

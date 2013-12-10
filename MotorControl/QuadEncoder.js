@@ -8,19 +8,15 @@
 
 var b = require('bonescript');
 
-function QuadEncoder (pin1, pin2)
+function QuadEncoder (pin1, pin2, checkDoneCallback)
 {
+	var self = this;
+	self.checkDoneCallback = checkDoneCallback;
+
 	b.pinMode(pin1, b.INPUT);
 	b.pinMode(pin2, b.INPUT);
-	b.attachInterrupt(pin1, true, b.CHANGE, pinOneTick);
-	b.attachInterrupt(pin2, true, b.CHANGE, pinTwoTick);
-
-	//
-	// Start pin running
-	//
-
-	// read in the BoneScript library
-	var b = require('bonescript');
+	b.attachInterrupt(pin1, true, b.CHANGE, self.PinOneTick);
+	b.attachInterrupt(pin2, true, b.CHANGE, self.PinTwoTick);
 
 	// b.digitalWrite(pin1, b.HIGH);
 	// b.digitalWrite(pin2, b.HIGH);
@@ -41,19 +37,22 @@ function QuadEncoder (pin1, pin2)
 	var _seenOne = 0;
 	var _seenZero = 0;
   
-	function pinOneTick(x)
+	self.PinOneTick = function (x)
 	{
 	  	_val1 = parseInt(x.value);
-	  	tick();
+	  	self.Tick();
+	  	self.CheckDone();
 	}
 
-	function pinTwoTick(y)
+	self.PinTwoTick = function (x)
 	{
-	  	_val2 = parseInt(y.value);
-	  	tick();
+	  	_val2 = parseInt(x.value);
+	  	self.Tick();
+	  	self.CheckDone();
+
 	}
 
-	function tick ()
+	self.Tick = function ()
 	{  
 	    //for each pair there's a position out of four
 	    if ( _val1 == 1 ) 
@@ -82,10 +81,6 @@ function QuadEncoder (pin1, pin2)
 	        _seenTwo = 1;
 	      }
 	    }
-
-		    
-
-
 
 		console.log(_pos);
 		//console.log(_val1 + ", " + _val2)
@@ -134,10 +129,14 @@ function QuadEncoder (pin1, pin2)
 
 		console.log("absolute position: " + _absPos);
 		return _absPos;
-
 	}
 
-	this.dispose = function()
+	self.CheckDone = function ()
+	{
+		
+	}
+
+	self.Dispose = function()
 	{
 		// detach interrupts
 		b.detachInterrupt(_inputPin1);
@@ -147,3 +146,8 @@ function QuadEncoder (pin1, pin2)
 }
 
 module.exports.QuadEncoder = QuadEncoder;
+
+
+
+
+

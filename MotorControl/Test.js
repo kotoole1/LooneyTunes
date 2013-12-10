@@ -49,7 +49,10 @@ function TestMotor(motorPin1, motorPin2)
 
 function TestEncoder(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2)
 {
-	var looney = new l.Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2);
+	//just test the encoder
+	//var encoder = new q.QuadEncoder(encoderPin1, encoderPin2);
+
+	var looney = new l.Looney(Looney1ServoPin, Looney1MotorPin1, Looney1MotorPin2, Looney1QuadEncoderPin1, Looney1QuadEncoderPin2);
 	looney.SetNote(10);
 }
 

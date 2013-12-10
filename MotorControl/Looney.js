@@ -24,9 +24,10 @@ var m = require('./Motor.js');
  */ 
 function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2) 
 {
-	this.servo = new s.Servo(servoPin);
-	this.motor = new m.Motor(motorPin1, motorPin2);
-	this.quadEncoder = new q.QuadEncoder(encoderPin1, encoderPin2);
+	var self = this;
+	self.servo = new s.Servo(servoPin);
+	self.motor = new m.Motor(motorPin1, motorPin2);
+	self.quadEncoder = new q.QuadEncoder(encoderPin1, encoderPin2, self.motor.Hold);
 
 	var _notes = {}
 
@@ -38,7 +39,7 @@ function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2)
 	 *        string is 'A4', then _notes will contain 'A4' : 0. If 'B4' is 5 
 	 *        ticks higher than 'A4', then _notes will contain 'B4' : 4
 	 */
-	this.AddNote = function (note, ticks)
+	self.AddNote = function (note, ticks)
 	{
 		_notes[note] = ticks;
 	}
@@ -47,9 +48,9 @@ function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2)
 	 * @param volume: A float between 0 and 1 that corresponds with how hard the
 	 *        string is pushed into the horse hair
 	 */
-	this.SetVolume = function (volume)
+	self.SetVolume = function (volume)
 	{
-		b.analogWrite(this.servoPin, volume, constants.SERVO_WRITE_FREQ);
+		b.analogWrite(self.servoPin, volume, constants.SERVO_WRITE_FREQ);
 		console.log("Hello");
 	};
 
@@ -57,24 +58,24 @@ function Looney(servoPin, motorPin1, motorPin2, encoderPin1, encoderPin2)
 	 * @param note: An int representing the number of encoder ticks the string
 	 *        should be tightened
 	 */
-	this.SetNote = function (note)
+	self.SetNote = function (note)
 	{
 		// Check if the note is higher or lower than the current position
 
-		this.motor.Tighten();
-		setTimeout(function() {looney.SetNoteCallback()}, 1000)
-		//b.digitalWrite(motorPin2, 0, this.SetNoteCallback);
+		setTimeout(function() { self.motor.Loosen(); }, 5000);
+		setTimeout(function() { self.SetNoteCallback(); }, 5010);
+		//b.digitalWrite(motorPin2, 0, self.SetNoteCallback);
 	};
 
 	/* Moniters the state of the string via the encoder to determine when the 
 	 * desired tautness has been reached
 	 */
-	this.SetNoteCallback = function ()
+	self.SetNoteCallback =  function ()
 	{
 		// Update encoder count
 
 		// Shut down the motors
-		this.motor.Hold();
+		self.motor.Hold();
 	};
 }
 
