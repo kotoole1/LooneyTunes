@@ -1,4 +1,46 @@
 {% extends "layout.html" %}
 {% block body %}
 	<p>Design</p>
+	<p>Have system diagrams, CAD files, source code, electrical diagrams.</p>
+
+	<div class="panel panel-default">
+		<h3>System Diagrams</h3>
+		<p>This is our overall main system diagram:</p>
+		<img class="picture" src = "{{ url_for('static', filename='images/system_design_2.JPG')}}"/>
+		<img class="picture" src = "{{ url_for('static', filename='images/electrical_system.JPG')}}"/>
+		<p>This is our main software system diagram:</p>
+		<img class="picture" src = "{{ url_for('static', filename='images/software.JPG')}}"/>
+	</div>
+
+	<div class="panel panel-default">
+		<h3>CAD</h3>
+		<p>INSERT MORE PICTURES OF CAD --> WANT ONES FROM ALL DIFFERENT PROTOTYPES. ALSO TALK ABOUT THE PICTURES A LITTLE BIT.</p>
+		<p>Below are our CAD render pictures from initial ideation to final product.</p>
+		<img class="picture" src = "{{ url_for('static', filename='images/WindingRender.jpg')}}"/>
+		<p>This is our first CAD of our idea of what our winding mechanism should be like. We decided to go through with a worm gear so that the shaft does not slip.</p>
+		<img class="picture" src = "{{ url_for('static', filename='images/wind-assy.png')}}"/>
+		<p>This is our next prototype of our winding mechanism. There's an additional smaller gear at the bottom of the worm gear so that there is more stability in the worm gear and the larger gear. We've also added the encoder and the wood for the pulling mechanism. There's also an additional key for the large gear; this is so that there is more contact between the large gear and the shaft.</p>
+		<img class="picture" src = "{{ url_for('static', filename='images/system_render_1.JPG')}}"/>
+		<p>This is our overall body of our string instrument. There's four of our winding mechanisms included and our bridge.</p>
+		<img class="picture" src = "{{ url_for('static', filename='images/system_render_2.png')}}"/>
+		<p>This is our first assembly of the mechanical system. Our bow is just a thick piece of wood at this point.</p>
+		<img class="picture" src = "{{ url_for('static', filename='images/system_render_2.JPG')}}"/>
+		<p>This is our final assembly of the mechanical system. We've replaced the bow with an acrylic wheel because the original idea of having horsehair on the wood wheel did not work as intended. The acrylic material ended up working as well as normal violin horsehair bows, so we decided to go with the acrylic wheel. There is also additional backing support so the back and the bridge do not bend as much when the strings are in tension.</p>
+	</div>
+
+	<div class="panel panel-default">
+		<h3>Source Code</h3>
+		<p>Below are our main source code for the project.</p>
+		<h4>Encoders</h4>
+		<p>blah blah blah pictures?</p>
+		<h4>Pulling System</h4>
+		<p>blah blah blah pictures?</p>
+	</div>
+
+	<div class="panel panel-default">
+		<h3></h3>
+	</div>
+
+
+
 {% endblock %}

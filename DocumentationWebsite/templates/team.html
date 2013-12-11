@@ -1,8 +1,13 @@
 {% extends "layout.html" %}
 {% block body %}
+	<p>INSERT PICTURE OF EACH CHARACTERS UNDER NAME OF TEAM MEMBERS</p>
 	{% for person in team %}
 		<div>
-			<p>{{person["name"]}}</p>
+			<h3>{{person["name"]}}</h3>
+			<p>{{person["thumb"]}}</p>
+			<p>{{person["bio"]}}</p>
+			<p>{{person["email"]}}</p>
+			<p></p>
 		</div>
 	{% endfor %}
 {% endblock %}

@@ -1,4 +1,10 @@
 {% extends "layout.html" %}
 {% block body %}
-	<p>I'm extending layout!</p>
+	<p>I'm extending layout! </p>
+	<h1>LOONEY TUNES</h1>
+	<h4>Principles of Engineering</h4>
+	<h4>Fall 2013</h4>
+	<img class="picture" src = "{{ url_for('static', filename='images/LooneyTunes.jpg')}}" />
+	<p></p>
+	<p>We need a main title, an awesome way to choose from different songs, possibly a way for people to create their own songs?, and also maybe some cute pictures?</p>
 {% endblock %}
