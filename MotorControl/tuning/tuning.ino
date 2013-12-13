@@ -23,14 +23,14 @@ const int bow_motorpin1 = 22;
 const int bow_motorpin2 = 24;
 
 //String 1
-QuadEncoder encoder(53, 51);
-const int Motor1Pin1 = 52;
-const int Motor1Pin2 = 50;
+//QuadEncoder encoder(53, 51);
+//const int Motor1Pin1 = 52;
+//const int Motor1Pin2 = 50;
 
-//String 2
-//QuadEncoder encoder(49, 47);
-//const int Motor1Pin1 = 48;
-//const int Motor1Pin2 = 46;
+////String 2
+QuadEncoder encoder(49, 47);
+const int Motor1Pin1 = 48;
+const int Motor1Pin2 = 46;
 
 //String 3
 //QuadEncoder encoder(45, 43);

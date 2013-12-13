@@ -3,6 +3,7 @@
 
 const int BAUD_RATE = 9600;
 boolean Twinkle = true;
+boolean HotCrossBuns = false;
 
 //Encoders
 QuadEncoder encoder1_detailed(53, 51);    //works negative tightens
@@ -75,7 +76,6 @@ void loop()
   if (Twinkle)
   {
     StartSong();
-    delay(10000);
     
     // A, A
     Serial.println("Twinkle");
@@ -100,8 +100,7 @@ void loop()
     LiftUpString(1);
     
     //D, D
-    //MoveString(2, 65);
-    MoveString(2, 5);
+    MoveString(2, 65);
     Serial.println("How I");
     PushDownString(2);
     QuarterWait(2);
@@ -126,6 +125,7 @@ void loop()
     Serial.println("Up a-");
     PushDownString(1);
     QuarterWait(2);
+    LiftUpString(1);
     
     //D, D
     Serial.println("-Bove the");
@@ -216,6 +216,70 @@ void loop()
   }
   Twinkle = false;
   
+  if (HotCrossBuns){
+    
+    StartSong();
+    
+    //Start on D
+    Serial.println("Hot");
+    PushDownString(2);
+    QuarterWait(1);
+    
+    //C
+    Serial.println("Cross");
+    MoveString(2, -15);
+    QuarterWait(1);
+    
+    //B
+    Serial.println("Buns");
+    MoveString(2, -30);
+    QuarterWait(1);
+    
+    //D
+    Serial.println("Hot");
+    MoveString(2, 45);
+    QuarterWait(1);
+    
+    //C
+    Serial.println("Cross");
+    MoveString(2, -15);
+    QuarterWait(1);
+    
+    //B
+    Serial.println("Buns");
+    MoveString(2, -30);
+    QuarterWait(1);
+    
+    //B, B, B, B
+    Serial.println("One A Penny");
+    QuarterWait(4);
+    
+    //C, C, C, C
+    Serial.println("Two A Penny");
+    MoveString(2, 30);
+    QuarterWait(4);
+    
+    //D
+    Serial.println("Hot");
+    MoveString(2, 15);
+    QuarterWait(1);
+    
+    //C
+    Serial.println("Cross");
+    MoveString(2, -15);
+    QuarterWait(1);
+    
+    //B
+    Serial.println("Buns");
+    MoveString(2, -30);
+    QuarterWait(1);
+   
+    
+    EndSong();
+  }
+  
+  HotCrossBuns = false;
+  
 }
 
 void QuarterWait(int num)
@@ -295,6 +359,8 @@ void StartSong()
  //Start bow axle
  digitalWrite(bow_motorpin1, HIGH);
  digitalWrite(bow_motorpin2, LOW); 
+ 
+ delay(10000);
 }
  
 void EndSong()
@@ -352,7 +418,7 @@ void MoveString(int string, int ticksToMove)
   QuadEncoder encoder(encoderpin1, encoderpin2);
   
   
-  long failTime = 10000; // 10 seconds
+  long failTime = 10000; // 1 seconds
   long failTimer = millis();
   int ticks = 0;
   while (ticks < abs(ticksToMove))
@@ -375,11 +441,11 @@ void MoveString(int string, int ticksToMove)
     }
     
     int moved = encoder.tick();
-    
-    if (moved == '-'){
-     //do nothing
-    }else{
-     ticks = moved;
+    //CHECK THAT THE ENCODER IS WORKING BY PRINTING THE TICK!!
+    Serial.print(moved);
+    if (moved == '>' || moved == '<')
+    {
+      ticks += 1;
     }
   }
   
@@ -388,4 +454,5 @@ void MoveString(int string, int ticksToMove)
   Serial.print(ticksToMove);
   Serial.println(" ticks");
 }
+
   
