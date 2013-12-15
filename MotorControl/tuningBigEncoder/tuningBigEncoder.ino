@@ -23,24 +23,24 @@ const int bow_motorpin1 = 22;
 const int bow_motorpin2 = 24;
 
 //String 1
-//QuadEncoder encoder(53, 51);
+//QuadEncoder encoder(37, 35);
 //const int Motor1Pin1 = 52;
 //const int Motor1Pin2 = 50;
 
-////String 2
-//QuadEncoder encoder(49, 47);
-//const int Motor1Pin1 = 48;
-//const int Motor1Pin2 = 46;
+//String 2
+QuadEncoder encoder(33, 31);
+const int Motor1Pin1 = 48;
+const int Motor1Pin2 = 46;
 
 //String 3
-//QuadEncoder encoder(45, 43);
+//QuadEncoder encoder(29, 27);
 //const int Motor1Pin1 = 44;
 //const int Motor1Pin2 = 42;
 
-////String 4
-QuadEncoder encoder(41, 39);
-const int Motor1Pin1 = 40;
-const int Motor1Pin2 = 38;
+//String 4
+//QuadEncoder encoder(25, 23);
+//const int Motor1Pin1 = 40;
+//const int Motor1Pin2 = 38;
 
 void setup()
 {
@@ -60,7 +60,11 @@ void setup()
 
 void MoveString(int ticksToMove)
 {
-  long failTime = 10000; // 1 seconds
+  
+  int pin1 = Motor1Pin1;
+  int pin2 = Motor1Pin2;
+  
+  long failTime = 10000; // 10 seconds
   long failTimer = millis();
   int ticks = 0;
   while (ticks < abs(ticksToMove))
@@ -69,33 +73,34 @@ void MoveString(int ticksToMove)
     {
       Serial.println("");
       Serial.println("Stalled trying to move the motor");
-      HoldString(Motor1Pin1, Motor1Pin2);
+      HoldString(pin1, pin2);
       return;
     }
     
     if (ticksToMove > 0)
     {
-      TightenString(Motor1Pin1, Motor1Pin2);  
+      TightenString(pin1, pin2);  
     }
     else
     {
-      LoosenString(Motor1Pin1, Motor1Pin2);   
+      LoosenString(pin1, pin2);   
     }
     
     int moved = encoder.tick();
-    //CHECK THAT THE ENCODER IS WORKING BY PRINTING THE TICK!!
-    Serial.print(moved);
-    if (moved == '>' || moved == '<')
-    {
-      ticks += 1;
+    
+    if (moved == '-'){
+     //do nothing
+    }else{
+     ticks = moved;
     }
   }
   
-  HoldString(Motor1Pin1, Motor1Pin2);
+  HoldString(pin1, pin2);
   Serial.print("Finished moving string ");
   Serial.print(ticksToMove);
   Serial.println(" ticks");
 }
+  
 
 void LoosenString(int pin1, int pin2)
 {
