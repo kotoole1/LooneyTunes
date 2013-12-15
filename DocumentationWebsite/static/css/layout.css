@@ -1,6 +1,23 @@
 .body 
 {
 	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.memberProfile
+{
+	clear: both;
+}
+
+.memberProfile img
+{
+	float: left;
+	width: 200px;
+}
+
+.memberProfile p:first-child
+{
+	float: right;
 }
 
 .blogPost
@@ -29,6 +46,7 @@
 	margin-right: auto;
 	width: 420px;
 	height: 315px;
+	padding-bottom: 20px;
 	/*display: inline;
 	float: left;
 	clear: both;
@@ -39,12 +57,65 @@
 /* For any photos we take of the project */
 .picture
 {
-	display: block;
+	/*display: block;
 	margin-left: auto;
-	margin-right: auto;
+	margin-right: auto;*/
+	padding-bottom: 20px;
+	width: 100%;
 	/*display: inline;
 	float: left;
 	clear: both;
 	width: 420px;
 	height: 315px;*/
 }
+
+#chrisBeingDumb
+{
+	text-align: center;
+}
+
+#chrisBeingDumb img
+{
+	width: 400px;
+}
+
+.btn
+{
+	width: 100%
+}
+
+h1
+{
+	text-align: center;
+}
+
+h3
+{
+	padding-top: 40px;
+}
+
+h5
+{
+	text-align: center;
+}
+
+#paragraph
+{
+	text-align: center;
+}
+
+#mainTitle
+{
+	font
+}
+
+
+
+
+
+
+
+
+
+
+

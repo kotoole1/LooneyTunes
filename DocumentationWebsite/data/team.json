@@ -1,32 +1,32 @@
 [
 	{
 		"name": "Philicia Chow",
-		"thumb": "INSERT PICTURE OF TWEETY",
-		"bio": "",
+		"thumb": "images/Tweety.jpg",
+		"bio": "Project Manager. As Project Manager, Philicia is in charge of scheduling team meetings. Additionally, she will help coordinate between the subteams to ensure that materials and resources are available. She will also ensure that team meetings stay on track. Philicia is also on the mechanical subteam.",
 		"email": "philicia.chow@students.olin.edu"
 	},
 	{
 		"name": "Allie Duncan",
-		"thumb": "INSERT PICTURE OF DUFFY DUCK",
-		"bio": "",
+		"thumb": "images/DuffyDuck.jpg",
+		"bio": "On the software subteam.",
 		"email": "elizabeth.duncan@students.olin.edu"
 	},
 	{
 		"name": "Chris Joyce",
-		"thumb": "INSERT PICTURE OF TAZ",
-		"bio": "",
+		"thumb": "images/Taz.jpeg",
+		"bio": "On the mechanical subteam.",
 		"email": "christopher.joyce@students.olin.edue"
 	},
 	{
 		"name": "Kyle McConnaughay",
-		"thumb": "INSERT PICTURE OF BUGS BUNNY",
-		"bio": "",
+		"thumb": "images/BugsBunny.jpg",
+		"bio": "On the software subteam.",
 		"email": "kyle.mcconnaughay@students.olin.edu"
 	},
 	{
 		"name": "Kevin O'Toole",
-		"thumb": "INSERT PICTURE OF ELMER FUDD",
-		"bio": "",
+		"thumb": "images/ElmerFudd.jpg",
+		"bio": "On all the subteams; makes sure everything's functioning properly and all communication between subsystems are working as expected.",
 		"email": "kevin.otoole@students.olin.edu"
 	}
 ]

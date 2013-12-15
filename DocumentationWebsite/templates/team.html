@@ -1,13 +1,16 @@
 {% extends "layout.html" %}
 {% block body %}
-	<p>INSERT PICTURE OF EACH CHARACTERS UNDER NAME OF TEAM MEMBERS</p>
+	<div class="page-header">
+		<h1>Team Members</h1>
+		<p id="paragraph">Team subgroups were divided based on each member's interests and desire to improve in certain aspects of the project. Additionaly, we ensured that any particular expertise is contributing to the appropriate subgroup.</p>
+	</div>
+
 	{% for person in team %}
-		<div>
-			<h3>{{person["name"]}}</h3>
-			<p>{{person["thumb"]}}</p>
-			<p>{{person["bio"]}}</p>
-			<p>{{person["email"]}}</p>
-			<p></p>
-		</div>
+	<div class="memberProfile">
+		<h3>{{person["name"]}}</h3>
+		<img src = "{{ url_for('static', filename=person['thumb'])}}" />
+		<p>{{person["bio"]}}</p>
+		<p>{{person["email"]}}</p>
+	</div>
 	{% endfor %}
 {% endblock %}
