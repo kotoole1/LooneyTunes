@@ -28,19 +28,19 @@ const int bow_motorpin2 = 24;
 //const int Motor1Pin2 = 50;
 
 ////String 2
-QuadEncoder encoder(49, 47);
-const int Motor1Pin1 = 48;
-const int Motor1Pin2 = 46;
+//QuadEncoder encoder(49, 47);
+//const int Motor1Pin1 = 48;
+//const int Motor1Pin2 = 46;
 
 //String 3
 //QuadEncoder encoder(45, 43);
 //const int Motor1Pin1 = 44;
 //const int Motor1Pin2 = 42;
 
-//String 4
-//QuadEncoder encoder(41, 39);
-//const int Motor1Pin1 = 40;
-//const int Motor1Pin2 = 38;
+////String 4
+QuadEncoder encoder(41, 39);
+const int Motor1Pin1 = 40;
+const int Motor1Pin2 = 38;
 
 void setup()
 {

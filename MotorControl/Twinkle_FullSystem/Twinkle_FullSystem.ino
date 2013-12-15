@@ -140,7 +140,7 @@ void loop()
     
     //B
     Serial.println("High");
-    MoveString(2, -30);
+    MoveString(2, -25);
     QuarterWait(1);
     LiftUpString(2);
     QuarterWait(1);
@@ -149,6 +149,7 @@ void loop()
     Serial.println("Like A");
     PushDownString(1);
     QuarterWait(1);
+    LiftUpString(1);
     
     //D, D
     MoveString(2, 45);
@@ -163,7 +164,7 @@ void loop()
     
     //B
     Serial.println("Sky");
-    MoveString(2, -30);
+    MoveString(2, -25);
     QuarterWait(1);
     
      //A, A
@@ -202,7 +203,7 @@ void loop()
     
     //B, B
     Serial.println("What you");
-    MoveString(2, -30);
+    MoveString(2, -20);
     QuarterWait(2);
     
     //A
