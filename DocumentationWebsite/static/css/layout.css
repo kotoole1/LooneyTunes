@@ -80,6 +80,16 @@
 	width: 400px;
 }
 
+#reflectionPics
+{
+	text-align: center;
+}
+
+#reflectionPics img
+{
+	width: 200px;
+}
+
 .btn
 {
 	width: 100%
