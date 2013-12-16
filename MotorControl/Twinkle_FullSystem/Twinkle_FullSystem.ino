@@ -2,8 +2,9 @@
 #include <QuadEncoder.h>
 
 const int BAUD_RATE = 9600;
-boolean Twinkle = true;
-boolean HotCrossBuns = false;
+boolean Twinkle = false;
+boolean Imperial = false;
+boolean HappyBirthday = true;
 
 //Encoders
 QuadEncoder encoder1_detailed(53, 51);    //works negative tightens
@@ -90,29 +91,29 @@ void loop()
     
     //F, F
     Serial.println("Little");
-    MoveString(1, 7);
+    MoveString(1, 4);
     QuarterWait(2);
     
     //E
     Serial.println("Star");
-    MoveString(1, -7);
-    QuarterWait(1);
+    MoveString(1, -4);
+    QuarterWait(2);
     LiftUpString(1);
     
     //D, D
-    MoveString(2, 65);
+    MoveString(2, 55);
     Serial.println("How I");
     PushDownString(2);
     QuarterWait(2);
     
     //C, C
     Serial.println("Wonder");
-    MoveString(2, -15);
+    MoveString(2, -10);
     QuarterWait(2);
     
     //B, B
     Serial.println("What You");
-    MoveString(2, -30);
+    MoveString(2, -20);
     QuarterWait(2);
     
     //A
@@ -129,18 +130,18 @@ void loop()
     
     //D, D
     Serial.println("-Bove the");
-    MoveString(2, 65);
+    MoveString(2, 55);
     PushDownString(2);
     QuarterWait(2);
     
     //C, C
     Serial.println("World So");
-    MoveString(2, -15);
+    MoveString(2, -10);
     QuarterWait(2);
     
     //B
     Serial.println("High");
-    MoveString(2, -25);
+    MoveString(2, -20);
     QuarterWait(1);
     LiftUpString(2);
     QuarterWait(1);
@@ -148,23 +149,23 @@ void loop()
     //E, E
     Serial.println("Like A");
     PushDownString(1);
-    QuarterWait(1);
+    QuarterWait(2);
     LiftUpString(1);
     
     //D, D
-    MoveString(2, 45);
+    MoveString(2, 30);
     Serial.println("Diamond");
     PushDownString(2);
     QuarterWait(2);
     
     //C, C
     Serial.println("In The");
-    MoveString(2, -15);
+    MoveString(2, -10);
     QuarterWait(2);
     
     //B
     Serial.println("Sky");
-    MoveString(2, -25);
+    MoveString(2, -20);
     QuarterWait(1);
     
      //A, A
@@ -180,25 +181,24 @@ void loop()
     
     //F, F
     Serial.println("Little");
-    MoveString(1, 7);
+    MoveString(1, 4);
     QuarterWait(2);
     
     //E
     Serial.println("Star");
-    MoveString(1, -7);
-    QuarterWait(1);
+    MoveString(1, -4);
+    QuarterWait(2);
     LiftUpString(1);
-    QuarterWait(1);
     
     //D, D
-    MoveString(2, 65);
+    MoveString(2, 55);
     Serial.println("How I");
     PushDownString(2);
     QuarterWait(2);
     
     //C, C
     Serial.println("Wonder");
-    MoveString(2, -15);
+    MoveString(2, -10);
     QuarterWait(2);
     
     //B, B
@@ -217,75 +217,311 @@ void loop()
   }
   Twinkle = false;
   
-  if (HotCrossBuns){
+  if (Imperial){
     
     StartSong();
     
-    //Start on D
-    Serial.println("Hot");
+    //Move D string to F
+    MoveString(3, 31);   
+    
+    //Play three A's
     PushDownString(2);
-    QuarterWait(1);
-    
-    //C
-    Serial.println("Cross");
-    MoveString(2, -15);
-    QuarterWait(1);
-    
-    //B
-    Serial.println("Buns");
-    MoveString(2, -30);
-    QuarterWait(1);
-    
-    //D
-    Serial.println("Hot");
-    MoveString(2, 45);
-    QuarterWait(1);
-    
-    //C
-    Serial.println("Cross");
-    MoveString(2, -15);
-    QuarterWait(1);
-    
-    //B
-    Serial.println("Buns");
-    MoveString(2, -30);
-    QuarterWait(1);
-    
-    //B, B, B, B
-    Serial.println("One A Penny");
-    QuarterWait(4);
-    
-    //C, C, C, C
-    Serial.println("Two A Penny");
-    MoveString(2, 30);
-    QuarterWait(4);
-    
-    //D
-    Serial.println("Hot");
-    MoveString(2, 15);
-    QuarterWait(1);
-    
-    //C
-    Serial.println("Cross");
-    MoveString(2, -15);
-    QuarterWait(1);
-    
-    //B
-    Serial.println("Buns");
-    MoveString(2, -30);
-    QuarterWait(1);
+    QuarterWaitImperial(1);
+    LiftUpString(2);
+    PushDownString(2);
+    QuarterWaitImperial(1);
+    LiftUpString(2);
+    PushDownString(2);
+    QuarterWaitImperial(1);
+    LiftUpString(2);
    
+    MoveString(2, 31);
+    
+    PushDownString(3);
+    QuarterWaitImperial(0.75);
+    LiftUpString(3);
+    
+    PushDownString(2);
+    QuarterWaitImperial(0.25);
+    LiftUpString(2);
+    
+    MoveString(2, -31);
+    PushDownString(2);
+    QuarterWaitImperial(1);
+    
+    LiftUpString(2);
+    MoveString(2, 31);
+    
+    
+    PushDownString(3);
+    QuarterWaitImperial(0.75);
+    
+    LiftUpString(3);
+    PushDownString(2);
+    QuarterWaitImperial(0.25);
+    LiftUpString(2);
+    
+    MoveString(2, -31);
+    PushDownString(2);
+    QuarterWaitImperial(2);
+    
+    // Start on the higher part
+    LiftUpString(2);
+    MoveString(1, 17);
+    PushDownString(1);
+    QuarterWaitImperial(1);
+    
+    //Stop lifting and pushing here
+    
+    LiftUpString(1);
+    PushDownString(2);
+    QuarterWaitImperial(0.75);
+    QuarterWaitImperial(0.25);
+    
+    LiftUpString(2);
+    PushDownString(1);
+    QuarterWaitImperial(1);
+    
+    MoveString(1, -2);
+    QuarterWaitImperial(0.75);
+    
+    MoveString(1, -2);
+    QuarterWaitImperial(0.25);
+    
+    MoveString(1, -2);
+    QuarterWaitImperial(0.25);
+ 
+    MoveString(1, -1);
+    QuarterWaitImperial(0.25);
+    
+    MoveString(1, 1);
+    QuarterWaitImperial(0.5);
+    
+    LiftUpString(1);
+    // Rest
+    QuarterWaitImperial(0.5);
+    
+    MoveString(2, 7);
+    PushDownString(2);
+    QuarterWaitImperial(0.5);
+    
+    MoveString(1, -8);
+    LiftUpString(2);
+    PushDownString(1);
+    QuarterWaitImperial(1);
+    
+    MoveString(2, 50);
+    LiftUpString(1);
+    PushDownString(2);
+    QuarterWaitImperial(0.75);
+    
+    MoveString(2, -5);
+    QuarterWaitImperial(0.25);
+
+    MoveString(2, -8);
+    QuarterWaitImperial(0.25);
+
+    MoveString(2, -10);
+    QuarterWaitImperial(0.25);
+
+    MoveString(2, 10);
+    QuarterWaitImperial(0.5);
+    
+    // Rest
+    LiftUpString(2);
+    QuarterWaitImperial(0.5);
+    
+    PushDownString(3);
+    QuarterWaitImperial(0.5);
+    
+    MoveString(3, 51);
+    QuarterWaitImperial(1);
+    
+    MoveString(3, -51);
+    QuarterWaitImperial(0.75);
+    
+    LiftUpString(3);
+    PushDownString(2);
+    QuarterWaitImperial(0.25);
+    
+    MoveString(2, -31);
+    QuarterWaitImperial(1);
+
+    LiftUpString(2);
+    PushDownString(3);
+    MoveString(2, 31);
+    QuarterWaitImperial(0.75);
+    
+    LiftUpString(3);
+    PushDownString(2);
+    QuarterWaitImperial(0.25);
+    
+    MoveString(2, -31);
+    QuarterWaitImperial(1);
     
     EndSong();
+    
+    //Set strings to E, A, and D
+    MoveString(3, -30);
+    MoveString(1, 4);
+    
+    
   }
   
-  HotCrossBuns = false;
+  Imperial = false;
+  
+  if (HappyBirthday){
+    
+   StartSong();
+   
+   //Make D string A
+   MoveString(3, 90);
+   MoveString(3, 40);
+   
+   //A, A
+   PushDownString(2);
+   QuarterWait(2);
+   LiftUpString(2);
+   
+   //B
+   MoveString(2, 18);
+   PushDownString(2);
+   QuarterWait(1);
+   LiftUpString(2);
+   
+   //A
+   MoveString(2, -20);
+   PushDownString(2);
+   QuarterWait(1);
+   LiftUpString(2);
+   
+   //D
+   MoveString(2, 55);
+   PushDownString(2);
+   QuarterWait(1);
+   LiftUpString(2);
+   
+   //C
+   MoveString(2, -10);
+   PushDownString(2);
+   QuarterWait(1);
+   LiftUpString(2);
+   
+    //A, A
+   MoveString(2, -40);
+   PushDownString(2);
+   QuarterWait(2);
+   LiftUpString(2);
+   
+   //B
+   MoveString(2, 18);
+   PushDownString(2);
+   QuarterWait(1);
+   LiftUpString(2);
+   
+   //A
+   MoveString(2, -20);
+   PushDownString(2);
+   QuarterWait(1);
+   LiftUpString(2);
+   
+   //E
+   PushDownString(1);
+   QuarterWait(1);
+   LiftUpString(1);
+   
+   //D
+   MoveString(2, 55);
+   PushDownString(2);
+   QuarterWait(1);
+   LiftUpString(2);
+   
+   
+   //Play open A on D string
+   //A, A
+   PushDownString(3);
+   QuarterWait(2);
+   LiftUpString(3);
+   
+   //A (E string)
+   MoveString(1, 19);
+   PushDownString(1);
+   QuarterWait(1);
+   LiftUpString(1);
+   
+   //F
+   MoveString(1, -11);
+   PushDownString(1);
+   QuarterWait(1);
+   LiftUpString(1);
+   
+   //D
+   PushDownString(2);
+   QuarterWait(1);
+   LiftUpString(2);
+   
+    //C
+   MoveString(2, -10);
+   PushDownString(2);
+   QuarterWait(1);
+   LiftUpString(2);
+   
+   //B
+   MoveString(2, -10);
+   PushDownString(2);
+   QuarterWait(1);
+   LiftUpString(2);
+   
+   //G
+   MoveString(1, 4);
+   PushDownString(1);
+   QuarterWait(2);
+   LiftUpString(1);
+   
+   //F
+   MoveString(1, -4);
+   PushDownString(1);
+   QuarterWait(1);
+   LiftUpString(1);
+   
+   //D
+   MoveString(2, 35);
+   PushDownString(2);
+   QuarterWait(1);
+   LiftUpString(2);
+   
+   //E
+   MoveString(1, -4);
+   PushDownString(1);
+   QuarterWait(1);
+   LiftUpString(1);
+   
+   //D
+   PushDownString(2);
+   QuarterWait(1);
+   
+  
+   EndSong();
+   
+   //Move D string back to D
+   MoveString(3, -90);
+   MoveString(3, -34);
+   MoveString(2, -50);
+   
+    
+  }
+  HappyBirthday = false;
   
 }
 
 void QuarterWait(int num)
 {
   delay(1000 * num);
+}
+
+void QuarterWaitImperial(float num)
+{
+  delay(800 * num);    
 }
 
 void LoosenString(int pin1, int pin2)
@@ -311,19 +547,19 @@ void PushDownString(int string)
   
   if (string == 1)
   {
-    servo1.write(35);
+    servo1.write(55);
   }
   if (string == 2)
   {
-    servo2.write(40);
+    servo2.write(65);
   }
   if (string == 3)
   {
-    servo3.write(50);
+    servo3.write(85);
   }
   if (string == 4)
   {
-    servo4.write(50);
+    servo4.write(85);
   }
 }
 

@@ -36,10 +36,10 @@ void loop()
 {
   
   //Push strings down
-  servo1.write(0);  //50 is down, -10 is up
-  servo2.write(0);  //60 is down
+  servo1.write(55);  //55 is down, -10 is up
+  servo2.write(0);  //65 is down
   servo3.write(0);  //85 is down
-  servo4.write(85);  //85 is down
+  servo4.write(0);  //85 is down
   
   digitalWrite(BowMotor1, LOW);
   digitalWrite(BowMotor2, HIGH); 

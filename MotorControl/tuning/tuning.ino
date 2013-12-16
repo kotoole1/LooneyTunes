@@ -123,10 +123,10 @@ void loop()
   digitalWrite(bow_motorpin2, LOW); 
   
   //Push strings down
-  servo1.write(35);
-  servo2.write(40);
-  servo3.write(50);
-  servo4.write(50);
+  servo1.write(55);
+  servo2.write(65);
+  servo3.write(85);
+  servo4.write(85);
   
   if (Serial.available())
   {
