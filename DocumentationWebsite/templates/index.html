@@ -3,41 +3,29 @@
 	<h1>LOONEY TUNES</h1>
 	<h5>Principles of Engineering</h5>
 	<h5>Fall 2013</h5>
-	<img class="picture" src = "{{ url_for('static', filename='images/LooneyTunes.jpg')}}" />
-	<iframe width="560" height="315" src="//www.youtube.com/embed/c1CVnhpesOo?rel=0" frameborder="0" allowfullscreen></iframe>
-	<!-- <button type="button">Click Me!</button> -->
-	<!-- <div class="row-fluid">
-		<div class="span9">
-			Twinkle Twinkle Little Star
-			<a class="btn btn-primary btn-large">
-				Twinkle Twinkle Little Star
-			</a>
+	
+	<div id="myCarousel" class="carousel slide">
+	  <ol class="carousel-indicators">
+	    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	    <li data-target="#myCarousel" data-slide-to="1"></li>
+	    <li data-target="#myCarousel" data-slide-to="2"></li>
+	  </ol>
+	  <!-- Carousel items -->
+	  <div class="carousel-inner" width="960" height="615">
+	    <div class="active item">
+			<iframe width="760" height="515" src="//www.youtube.com/embed/c1CVnhpesOo?rel=0" frameborder="0" allowfullscreen></iframe>
+	    </div>
+	    <div class="item">
+			<iframe width="760" height="515" src="//www.youtube.com/embed/rVFWmoescNk?rel=0" frameborder="0" allowfullscreen></iframe>
 		</div>
-	</div> -->
-
-	<!-- <button type="button" onclick="JavaScript:alert('Once upon a time, there lived Tweety, Daffy Duck, Taz, Bugs Bunny, and Elmer Fudd. The created an awesome instrument and it works. The end.')">
-		<img src="Tweety.jpg" alt="Click Me!" />
-		<br />Click Me!
-	</button> -->
-
-	<!-- <form method="link" action="http://127.0.0.1:5000/timeline">
-		<input type="submit" value="Timeline">
-	</form> -->
-	<div>
-
-	<form>
-		<input type="button" value="Twinkle Twinkle Little Star" onclick="window.location.href='http://127.0.0.1:5000/timeline'">
-	</form>
-
-	<form>
-		<input type="button" value="Happy Birthday" onclick="window.location.href='http://127.0.0.1:5000/team'">
-	</form>
-
-	<form>
-		<input type="button" value="Star Wars" onclick="window.location.href='http://127.0.0.1:5000/design'">
-	</form>
+	    <div class="item">
+	    	<iframe width="760" height="515" src="//www.youtube.com/embed/m4rXbnZ5ciI?rel=0" frameborder="0" allowfullscreen></iframe>
+	    </div>
+	  </div>
+	  <!-- Carousel nav -->
+	  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+	  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 	</div>
-
-	<p id="paragraph">We need a main title, an awesome way to choose from different songs, possibly a way for people to create their own songs?, and also maybe some cute pictures?</p>
+	
 {% endblock %}
 
