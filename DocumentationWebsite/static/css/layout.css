@@ -13,6 +13,7 @@
 {
 	float: left;
 	width: 200px;
+	margin-right: 20px;
 }
 
 .memberProfile p:first-child
@@ -107,6 +108,11 @@ h5
 #mainTitle
 {
 	font
+}
+
+.centered
+{
+	text-align: center;
 }
 
 
