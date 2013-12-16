@@ -1,4 +1,105 @@
 {% extends "layout.html" %}
 {% block body %}
-<p>herrooooooo</p>
+
+	<div class="page-header">
+		<h1>Team Member Reflections</h1>
+	</div>
+	
+	<div class="centered">
+		<p>Individual reflections on the overall project.</p>
+	</div>
+
+	<div class="accordion" id="design_accordion">
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#design_accordion" href="#collapseZero">
+				Philicia Chow
+				</a>
+			</div>
+			<div id="collapseZero" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<div class="panel panel-default">
+						<div id="reflectionPics">
+							<img class="picture" src = "{{ url_for('static', filename='images/Tweety.jpg')}}"/>
+						</div>
+						<h5>Philicia Chow</h5>
+						<p>Reflection reflection blah blah blah.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#design_accordion" href="#collapseOne">
+				Allie Duncun
+				</a>
+			</div>
+			<div id="collapseOne" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<div class="panel panel-default">
+						<div id="reflectionPics">
+							<img class="picture" src = "{{ url_for('static', filename='images/DuffyDuck.jpg')}}"/>
+						</div>
+						<h5>Allie Duncun</h5>
+						<p>Reflection reflection blah blah blah. My name is Daffy Duck not Duffy Duck.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#design_accordion" href="#collapseTwo">
+				Chris Joyce
+				</a>
+			</div>
+			<div id="collapseTwo" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<div class="panel panel-default">
+						<div id="reflectionPics">
+							<img class="picture" src = "{{ url_for('static', filename='images/Taz.jpeg')}}"/>
+						</div>
+						<h5>Chris Joyce</h5>
+						<p>Reflection reflection blah blah blah.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#design_accordion" href="#collapseThree">
+				Kyle McConnaughay
+				</a>
+			</div>
+			<div id="collapseThree" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<div class="panel panel-default">
+						<div id="reflectionPics">
+							<img class="picture" src = "{{ url_for('static', filename='images/BugsBunny.jpg')}}"/>
+						</div>
+						<h5>Kyle McConnaughay</h5>
+						<p>Reflection reflection blah blah blah.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#design_accordion" href="#collapseFour">
+				Kevin O'Toole
+				</a>
+			</div>
+			<div id="collapseFour" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<div class="panel panel-default">
+						<div id="reflectionPics">
+							<img class="picture" src = "{{ url_for('static', filename='images/ElmerFudd.jpg')}}"/>
+						</div>
+						<h5>Kevin O'Toole</h5>
+						<p>Reflection reflection blah blah blah.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+
 {% endblock %}
