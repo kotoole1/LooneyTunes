@@ -2,31 +2,36 @@
 	{
 		"name": "Philicia Chow",
 		"thumb": "images/Tweety.jpg",
+		"role": "Project Manager/Mechanical",
 		"bio": "Project Manager. As Project Manager, Philicia is in charge of scheduling team meetings. Additionally, she will help coordinate between the subteams to ensure that materials and resources are available. She will also ensure that team meetings stay on track. Philicia is also on the mechanical subteam.",
 		"email": "philicia.chow@students.olin.edu"
 	},
 	{
 		"name": "Allie Duncan",
 		"thumb": "images/DuffyDuck.jpg",
-		"bio": "On the software subteam.",
+		"role": "Software Co-Lead",
+		"bio": "Hailing from Colorado, Allie spends much of her time talking about how nothing on the East Coast is quite as good as it is out West, yet she's still taken aback by winter in Boston.  As an actual violinist, she provided much-needed musical advice throughout the project in addition to her technical contributions to the software system.",
 		"email": "elizabeth.duncan@students.olin.edu"
 	},
 	{
 		"name": "Chris Joyce",
 		"thumb": "images/Taz.jpeg",
-		"bio": "On the mechanical subteam.",
-		"email": "christopher.joyce@students.olin.edue"
+		"role": "Mechanical Lead",
+		"bio": "Chris can generally be found doing one of three things:  Working on Olin College's Mini-Baja team, climbing a mountain, or wishing he was climbing a mountain.  He enjoys designing and building complex mechanical systems, and was a driving force behind both the mechanical design and manufacturing of the system.",
+		"email": "christopher.joyce@students.olin.edu"
 	},
 	{
 		"name": "Kyle McConnaughay",
 		"thumb": "images/BugsBunny.jpg",
-		"bio": "On the software subteam.",
+		"role": "Software Co-Lead",
+		"bio": "A Bostonian by sports loyalties (the only metric that matters), Kyle is the musical director of Olin College's a capella group.  It took the team a while to sell him on the idea that music actually needed instruments, let alone robotic ones.  He contributes heavily to the software system with its ever changing lineup of microcontrollers.",
 		"email": "kyle.mcconnaughay@students.olin.edu"
 	},
 	{
 		"name": "Kevin O'Toole",
 		"thumb": "images/ElmerFudd.jpg",
-		"bio": "On all the subteams; makes sure everything's functioning properly and all communication between subsystems are working as expected.",
+		"role": "Electrical Lead, Software & Mechanical",
+		"bio": "Another Coloradoan, Kevin is an electrical engineer by trade.  However, he has extensive experience with other systems as well as laser-cutting, and was instrumental (pun intended) in integration of all parts of the system, providing a much-needed sanity check and full-scope understanding of what each system could accomplish.",
 		"email": "kevin.otoole@students.olin.edu"
 	}
 ]
