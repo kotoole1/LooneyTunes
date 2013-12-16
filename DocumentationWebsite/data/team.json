@@ -1,37 +1,42 @@
 [
 	{
 		"name": "Philicia Chow",
-		"thumb": "images/Tweety.jpg",
-		"role": "Project Manager/Mechanical",
-		"bio": "Project Manager. As Project Manager, Philicia is in charge of scheduling team meetings. Additionally, she will help coordinate between the subteams to ensure that materials and resources are available. She will also ensure that team meetings stay on track. Philicia is also on the mechanical subteam.",
+		"thumb": "images/philicia.jpg",
+		"role": "Project Manager, mechanical subsystem",
+		"bio": "From sunny Texas, Philicia has quite a bit of artistic talent.  In addition to her contributions to the mechanical system, Philicia has applied her fantastic organizational skills to help the team stay on track, and helped set the direction of the team through making sure that the subsystems are accounting for each other.",
+		"technical": "A bioengineer, Philicia's main technical interests lie in ____",
 		"email": "philicia.chow@students.olin.edu"
 	},
 	{
 		"name": "Allie Duncan",
-		"thumb": "images/DuffyDuck.jpg",
+		"thumb": "images/Allie.jpg",
 		"role": "Software Co-Lead",
 		"bio": "Hailing from Colorado, Allie spends much of her time talking about how nothing on the East Coast is quite as good as it is out West, yet she's still taken aback by winter in Boston.  As an actual violinist, she provided much-needed musical advice throughout the project in addition to her technical contributions to the software system.",
+		"technical": "A engineer with computing, Allie enjoys working on ____",
 		"email": "elizabeth.duncan@students.olin.edu"
 	},
 	{
 		"name": "Chris Joyce",
-		"thumb": "images/Taz.jpeg",
+		"thumb": "images/chris.jpg",
 		"role": "Mechanical Lead",
 		"bio": "Chris can generally be found doing one of three things:  Working on Olin College's Mini-Baja team, climbing a mountain, or wishing he was climbing a mountain.  He enjoys designing and building complex mechanical systems, and was a driving force behind both the mechanical design and manufacturing of the system.",
+		"technical": "A mechanical engineer graduating in Spring 2015, Chris's engineering interests lie in vehicular technology (specifically aerospace and automotive) and outdoors gear design.  He hopes to find work in one of these industries.",
 		"email": "christopher.joyce@students.olin.edu"
 	},
 	{
 		"name": "Kyle McConnaughay",
-		"thumb": "images/BugsBunny.jpg",
+		"thumb": "images/kyle.jpg",
 		"role": "Software Co-Lead",
 		"bio": "A Bostonian by sports loyalties (the only metric that matters), Kyle is the musical director of Olin College's a capella group.  It took the team a while to sell him on the idea that music actually needed instruments, let alone robotic ones.  He contributes heavily to the software system with its ever changing lineup of microcontrollers.",
+		"technical": "A engineer with computing, Kyle spends his time focusing on _____",
 		"email": "kyle.mcconnaughay@students.olin.edu"
 	},
 	{
 		"name": "Kevin O'Toole",
-		"thumb": "images/ElmerFudd.jpg",
-		"role": "Electrical Lead, Software & Mechanical",
+		"thumb": "images/kevin.jpg",
+		"role": "Electrical Lead, software & mechanical subsystems",
 		"bio": "Another Coloradoan, Kevin is an electrical engineer by trade.  However, he has extensive experience with other systems as well as laser-cutting, and was instrumental (pun intended) in integration of all parts of the system, providing a much-needed sanity check and full-scope understanding of what each system could accomplish.",
+		"technical": "An electrical and computer engineer, Kevin's passions are for ____",
 		"email": "kevin.otoole@students.olin.edu"
 	}
 ]
