@@ -16,6 +16,10 @@ def design():
 def timeline():
 	return render_template("timeline.html")
 
+@app.route("/reflection")
+def reflection():
+	return render_template("reflection.html")
+
 @app.route("/team")
 def team():
 	json_team_data = open("data/team.json")
