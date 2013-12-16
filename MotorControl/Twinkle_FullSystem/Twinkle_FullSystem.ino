@@ -2,9 +2,9 @@
 #include <QuadEncoder.h>
 
 const int BAUD_RATE = 9600;
-boolean Twinkle = false;
+boolean Twinkle = true;
 boolean Imperial = false;
-boolean HappyBirthday = true;
+boolean HappyBirthday = false;
 
 //Encoders
 QuadEncoder encoder1_detailed(53, 51);    //works negative tightens
@@ -227,11 +227,7 @@ void loop()
     //Play three A's
     PushDownString(2);
     QuarterWaitImperial(1);
-    LiftUpString(2);
-    PushDownString(2);
     QuarterWaitImperial(1);
-    LiftUpString(2);
-    PushDownString(2);
     QuarterWaitImperial(1);
     LiftUpString(2);
    
@@ -243,10 +239,8 @@ void loop()
     
     PushDownString(2);
     QuarterWaitImperial(0.25);
-    LiftUpString(2);
     
     MoveString(2, -31);
-    PushDownString(2);
     QuarterWaitImperial(1);
     
     LiftUpString(2);
@@ -259,10 +253,8 @@ void loop()
     LiftUpString(3);
     PushDownString(2);
     QuarterWaitImperial(0.25);
-    LiftUpString(2);
     
     MoveString(2, -31);
-    PushDownString(2);
     QuarterWaitImperial(2);
     
     // Start on the higher part
@@ -270,8 +262,6 @@ void loop()
     MoveString(1, 17);
     PushDownString(1);
     QuarterWaitImperial(1);
-    
-    //Stop lifting and pushing here
     
     LiftUpString(1);
     PushDownString(2);
@@ -281,8 +271,10 @@ void loop()
     LiftUpString(2);
     PushDownString(1);
     QuarterWaitImperial(1);
+    LiftUpString(1);
     
     MoveString(1, -2);
+    PushDownString(1);
     QuarterWaitImperial(0.75);
     
     MoveString(1, -2);
@@ -304,6 +296,8 @@ void loop()
     MoveString(2, 7);
     PushDownString(2);
     QuarterWaitImperial(0.5);
+    LiftUpString(2);
+    //o
     
     MoveString(1, -8);
     LiftUpString(2);
@@ -333,11 +327,17 @@ void loop()
     
     PushDownString(3);
     QuarterWaitImperial(0.5);
+    //added
+    LiftUpString(3);
     
     MoveString(3, 51);
+    //added
+    PushDownString(3);
     QuarterWaitImperial(1);
     
     MoveString(3, -51);
+    //added
+    PushDownString(3);
     QuarterWaitImperial(0.75);
     
     LiftUpString(3);
@@ -364,6 +364,7 @@ void loop()
     //Set strings to E, A, and D
     MoveString(3, -30);
     MoveString(1, 4);
+    MoveString(2, -7);
     
     
   }
