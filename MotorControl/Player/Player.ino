@@ -48,12 +48,9 @@ void setup()
     int motorPin2 = motorPins[i][1];
     pinMode(motorPin1, OUTPUT);
     pinMode(motorPin2, OUTPUT);
-  }
-  
-  for (int i = 0; i < NUM_STRINGS; i++)
-  {
-    *encoders[i][1] = QuadEncoder(encoderPins[i][1][1], encoderPins[i][1][2]);
-    *encoders[i][2] = QuadEncoder(encoderPins[i][2][1], encoderPins[i][2][2]);  
+    
+    *encoders[i][0] = QuadEncoder(encoderPins[i][0][0], encoderPins[i][0][1]);
+    *encoders[i][1] = QuadEncoder(encoderPins[i][1][0], encoderPins[i][1][1]);
   }
   
   HotCrossBuns(); 
@@ -110,7 +107,8 @@ void UpdateEncoders(byte index)
 
 void UpdateStringTension(byte index)
 {
-      
+  // Check to see whether the encoder positions match the target positions
+  // Move the motors accordingly 
 }
 
 
