@@ -5,7 +5,7 @@
 	</div>
 	
 	<div class="centered">
-		<p>We created a cheap mechanical instrument that can play itself</p>
+		<p>We created a cheap mechanical instrument that can play itself.  Our goal was to create a violin-like instrument for less than $250 total cost.  We designed our project as an initial prototype of a full open-source robotic string instrument framework.  Subsystem overviews can be found below, and a bill of materials, drawing package, schematic, and source code can be found at the bottom of this page.</p>
 	</div>
 
 	<div class="accordion" id="design_accordion">
@@ -37,7 +37,7 @@
 			<div id="collapseOne" class="accordion-body collapse">
 				<div class="accordion-inner">
 					<div class="panel panel-default">
-						<h3>CAD</h3>
+						<h3>Mechanical Overview</h3>
 						<p>INSERT MORE PICTURES OF CAD --> WANT ONES FROM ALL DIFFERENT PROTOTYPES. ALSO TALK ABOUT THE PICTURES A LITTLE BIT.</p>
 						<p>Below are our CAD render pictures from initial ideation to final product.</p>
 						<img class="picture" src = "{{ url_for('static', filename='images/WindingRender.jpg')}}"/>
@@ -50,9 +50,16 @@
 						<p>This is our first assembly of the mechanical system. Our bow is just a thick piece of wood at this point.</p>
 						<img class="picture" src = "{{ url_for('static', filename='images/system_render_2.JPG')}}"/>
 						<p>This is our final assembly of the mechanical system. We've replaced the bow with an acrylic wheel because the original idea of having horsehair on the wood wheel did not work as intended. The acrylic material ended up working as well as normal violin horsehair bows, so we decided to go with the acrylic wheel. There is also additional backing support so the back and the bridge do not bend as much when the strings are in tension.</p>
+						<h3>Assembly Videos</h3>
+						<h4>String Winding Subassembly</h4>
+						<iframe class="youtube" src="//www.youtube.com/embed/UeXmjC2wE74?rel=0" frameborder="0" allowfullscreen></iframe>
+						<h4>String Pulldown Subassembly</h4>
+						<iframe class="youtube" src="//www.youtube.com/embed/lzFDwtuOjtg?rel=0" frameborder="0" allowfullscreen></iframe>
+						<h4>Bow Wheel Subassembly</h4>
+						<iframe class="youtube" src="//www.youtube.com/embed/mrIRs8rpRZ0?rel=0" frameborder="0" allowfullscreen></iframe>
+						<h4>Full Assembly</h4>
+						<iframe class="youtube" src="//www.youtube.com/embed/vy9g1K3xz4E?rel=0" frameborder="0" allowfullscreen></iframe>
 					</div>
-					<a href="{{ url_for('static', filename='PDFs/LT3-DrawingPackage.pdf') }}">Drawing Package</a>
-					<a href="{{ url_for('static', filename='PDFs/LT3-CUTFILE.AI') }}">Laser Cutfile</a>
 				</div>
 			</div>
 		</div>
@@ -64,7 +71,8 @@
 			</div>
 			<div id="collapseTwo" class="accordion-body collapse">
 				<div class="accordion-inner">
-				I'm the electrical stuff!
+					<h3>Electrical Overview</h3>
+					<p>I'm the electrical stuff!</p>
 				</div>
 			</div>
 		</div>
@@ -77,6 +85,25 @@
 			<div id="collapseThree" class="accordion-body collapse">
 				<div class="accordion-inner">
 					<div class="panel panel-default">
+						<h3>Software Overview</h3>
+						<p>Below are our main source code for the project.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#design_accordion" href="#collapseFour">
+				Source Files
+				</a>
+			</div>
+			<div id="collapseFour" class="accordion-body collapse">
+				<div class="accordion-inner">
+					<div class="panel panel-default">
+						<h3>Bill of Materials</h3>
+						<h3>Drawing Package</h3>
+						<p><a href="{{ url_for('static', filename='PDFs/LT3-DrawingPackage.pdf') }}">Conventionally Machined Parts</a></p>
+						<p><a href="{{ url_for('static', filename='PDFs/LT3-CUTFILE.AI') }}">Laser Cutfile</a></p>
 						<h3>Source Code</h3>
 						<p>Below are our main source code for the project.</p>
 						<h4>Encoders</h4>
