@@ -5,8 +5,28 @@
 	</div>
 	
 	<div class="panel panel-default">
-		<h3>Getting Ready for Demo Day!</h3>
-		<p>Since Thanksgiving Break, we have been working on our final prototype. We also started to combine our subsystems so that we can begin testing the entire system. ADD MORE!!!<p>
+		<h3>Getting Ready for Demo Day</h3>
+		<p>Things seemed to lighten up after our drastic switch from the Beagle Bone to the Arduino Mega. We finally got some code working and implimented into our system. And we've managed to play Twinkle Twinkle Little Star with our instrument!</p>
+		<img class="picture" src = "{{ url_for('static', filename='images/finalVersion.jpg')}}"/>
+		<img class="picture" src = "{{ url_for('static', filename='images/ChrisBeingHappy.jpg')}}"/>
+	</div>
+	
+	<div class="panel panel-default">
+		<h3>Makeover of the Bow</h3>
+		<p></p><!-- 
+		<img class="picture" src = "{{ url_for('static', filename='images/BrokenString.JPG')}}"/>
+		<img class="picture" src = "{{ url_for('static', filename='images/BrokenString.JPG')}}"/> -->
+	</div>
+
+	<div class="panel panel-default">
+		<h3>Decision to Move to Arduino Mega</h3>
+		<p>Today is a sad day for Team Looney Tunes. For around the 5th time, the Beagle Bone has crashed while we were trying to integrate it with the entire system. It works with each individual part, but freezes when asked to perform complex tasks. We've had to re-flash it several times in order to resolve it being frozen. As shown in the image below, sometimes the microprocessor will freeze with only two lights on. (Normal operation is with all lights blinking.) Overall, although the Beagle Bone's features are perfect for what we want to do, it is not reliable enough for our robotic violin. We have switched to the Arduino Mega. This microprocessor will not connect to the web as we wanted to, but will reliably work.</p>
+		<img class="picutre" src = "{{ url_for('static', filename='images/FailingBeagleBone.JPG')}}"/>
+	</div>
+
+	<div class="panel panel-default">
+		<h3>Final Prototype Assembly</h3>
+		<p>Since Thanksgiving Break, we have been working on our final prototype. We fixed things we didn't like and things that were problematic from the previous prototype. These changes included obtaining nice flat wood, adding more support to decrease the bending of the bridge, designing a new encoder mounting, and adding secondary encoders.<p>
 		<img class="picture" src = "{{ url_for('static', filename='images/AllParts.JPG')}}"/>
 		<div id="chrisBeingDumb">
 			<img class="picture" src = "{{ url_for('static', filename='images/Cute.jpg')}}"/>
@@ -15,58 +35,52 @@
 		<img class="picture" src = "{{ url_for('static', filename='images/FullAssembly.JPG')}}"/>
 		<img class="picutre" src = "{{ url_for('static', filename='images/CloseUpOfGears.jpg')}}"/>	
 	</div>
-	
-	<div class="panel panel-default">
-		<h3>Decision to Move to Arduino Mega</h3>
-			<p> Today is a sad day for Team Looney Tunes. For around the 5th time, the Beagle Bone has crashed while we were trying to integrate it with the entire system. It works with each individual part, but freezes when asked to perform complex tasks. We've had to re-flash it several times in order to resolve it being frozen. As shown in the image below, sometimes the microprocessor will freeze with only two lights on. (Normal operation is with all lights blinking.) Overall, although the Beagle Bone's features are perfect for what we want to do, it is not reliable enough for our robotic violin. We have switched to the Arduino Mega. This microprocessor will not connect to the web as we wanted to, but will reliably work. </p>
-	<img class="picutre" src = "{{ url_for('static', filename='images/FailingBeagleBone.JPG')}}"/>			
-	</div>
 
 	<div class="panel panel-default">
 		<h3>Critical Design Review - 11.19.13</h3>
 		<p>The goal for this design review was to make sure we had all of our critical subsystems working, or at least we have an idea of how to solve the critical problems.</p>
 		<p>Our critical subsystems included: transition from 1 string to 4 strings, addition of an amplifier, making sure the "string pulling" system works, and finally having all connections through the BeagleBone. We were able to have all of our critical subsystems ready. We were not able to get our bow wheel ready; however, we believed that our bow wheel was not a critical subsystem. </p>
+		<p style="font-size: 150%; text-align: center;"><a href="{{ url_for('static', filename='PDFs/CriticalDesignReview.pdf')}}" target="#">Copy of In-Class Presentation</a></p>
 		<img class="picture" src = "{{ url_for('static', filename='images/1stPrototype.jpg')}}" />
 		<p>Most of the feedback we've received from our design review were concerns about our bow wheel. Turns out that our bow wheel was a critical subsystem that we needed to find a solution to fast.</p>
 		<p>For our bow, we believe we can apply the same characteristics from the bow of a hurdy gurdy to our bow.</p>
 	</div>
 	
 	<div class="panel panel-default">
+		<h3>First Broken String</h3>
+		<p> While working with our four-string prototype, one of the wires from the BeagleBone to the the A motor came loose. Thus, the motor though we were driving it with a HIGH and LOW signal. Our reflexes weren't fast enough to unplug the power and we ended up with our first broken string. We are sure this is just going to be one of many... </p>
+		<img class="picture" src = "{{ url_for('static', filename='images/BrokenString.JPG')}}" />	
+	</div>
+
+	<div class="panel panel-default">
+		<h3>Initial Four-String Prototype</h3>
+		<p>After the Preliminary Design Review, we immediately began CAD-ing our four-string prototype. Once everything was good to go, we began to assembly our very first four-string prototype.</p>
+		<img class="picture" src = "{{ url_for('static', filename='images/3rdPrototypeAssembling.JPG')}}" />
+
+	</div>
+
+	<div class="panel panel-default">
 		<h3>Preliminary Design Review - 10.28.13</h3>
 		<p>For this preliminary design review, we talked about our design goals, our three main mechanical, electrical, and software subsystems, and our schedule for this final project. Some of our goals include: we will create a string instrument that is controlled and played mechanically, the instrument will be capable of playing music that a traditional violin cannot play (e.g. chords and large interval gaps), and the system will connect to an engaging interface for listerners to choose songs from.</p>
 		<p>Before throwing ourselves into working on the three separate subsystems, some major design decisions had to be made. We decided that we would control the pitch of the strings by means of changing the tension of the string, instead of having set pressers to press down on the strings to change the pitch. We also decided to use a BeagleBone as our microcontroller because of the vast amount of pins it has.</p>
 		<p>From all these decisions and subsystems, we've decided that the most critical part of our system is being able to change the pitch of the string by means of changing the tension of the string. Hence for our Preliminary Design Review, we made sure to have a working tension system to showcase. Below attached is our PowerPoint of our presentation for the design review. Also, below are two video examples of our tensioning of the strings.</p>
-		<p style="font-size: 150%; text-align: center;"><a href="{{ url_for('static', filename='PDFs/PreliminaryReviewPowerPoint.pdf')}}" target="#">Copy of in-class presentation</a></p>
+		<p style="font-size: 150%; text-align: center;"><a href="{{ url_for('static', filename='PDFs/PreliminaryReviewPowerPoint.pdf')}}" target="#">Copy of In-Class Presentation</a></p>
 		<iframe class="youtube" src="//www.youtube.com/embed/J1PTjXY7CHs?rel=0" frameborder="0" allowfullscreen></iframe>
 		<iframe class="youtube" src="//www.youtube.com/embed/5m02DnYWyT0?rel=0" frameborder="0" allowfullscreen></iframe>	
 	</div>
 	
 	<div class="panel panel-default">
-		<h3>First Broken String</h3>
-			<p> While working with our four-string prototype, one of the wires from the BeagleBone to the the A motor came loose. Thus, the motor though we were driving it with a HIGH and LOW signal. Our reflexes weren't fast enough to unplug the power and we ended up with our first broken string. We are sure this is just going to be one of many... </p>
-		<img class="picture" src = "{{ url_for('static', filename='images/BrokenString.JPG')}}" />	
-	</div>
-	
-	<div class="panel panel-default">
-		<h3>Initial Four-String Prototype</h3>
-			<p> blah blah blah </p>
-	</div>
-	
-	<div class="panel panel-default">
 		<h3>Final One-String Prototype</h3>
-			<p> blah blah blah </p>
+		<p> blah blah blah </p>
 	</div>
 	
 	<div class="panel panel-default">
 		<h3>Initial One-String Prototype</h3>
-			<p> blah blah blah </p>
-			<img class="picture" src = "{{ url_for('static', filename='images/1stPrototypeComplete.JPG')}}"/>	
-			<img class="picture" src = "{{ url_for('static', filename='images/1stPrototypeBridge.JPG')}}"/>	
-			<img class="picture" src = "{{ url_for('static', filename='images/1stPrototypeSideTop.JPG')}}"/>	
-			<img class="picture" src = "{{ url_for('static', filename='images/1stPrototypeFrontTop.JPG')}}"/>	
+		<p> blah blah blah </p>
+		<img class="picture" src = "{{ url_for('static', filename='images/1stPrototypeComplete.JPG')}}"/>	
+		<img class="picture" src = "{{ url_for('static', filename='images/1stPrototypeBridge.JPG')}}"/>	
+		<img class="picture" src = "{{ url_for('static', filename='images/1stPrototypeSideTop.JPG')}}"/><img class="picture" src = "{{ url_for('static', filename='images/1stPrototypeFrontTop.JPG')}}"/>	
 	</div>
-		
-		
 
 	<div class="panel panel-default">
 		<h3>Initial Thoughts on Mechanical Design - 10.22.13</h3>
