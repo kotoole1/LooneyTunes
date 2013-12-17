@@ -13,9 +13,16 @@
 	
 	<div class="panel panel-default">
 		<h3>Makeover of the Bow</h3>
-		<p></p><!-- 
-		<img class="picture" src = "{{ url_for('static', filename='images/BrokenString.JPG')}}"/>
-		<img class="picture" src = "{{ url_for('static', filename='images/BrokenString.JPG')}}"/> -->
+		<p>We've had quite some problem with our bow ever since our first four-string prototype assembly. The wood material did not work as well as we thought it would, because of the very uneven contact surfaces between the strings and the bow, and inconsistant friction with the strings. We then decided to glue some horsehair onto the wooden bow wheel to see if there's any improvement. However, sadly, the result was a hot mess. We had trouble getting the horsehair onto the wheel in a very orderly and well distributed way. Over time the horsehair also began to fall off at places where there were no glue. Therefore gluing horsehair onto a wooden wheel turned out to be not a very good solution.</p>
+		<!-- <img class="picture" src = "{{ url_for('static', filename='images/ugleBetty.jpg')}}"/> -->
+		<p>We then turned to an acrylic wheel, because we believed that the contact surface would be much smoother from the laser cutting machine. However, turns out that the acrylic wheel was also not a viable solution. We then wondered if attaching strips of horsehair to the surface of a rubber strip would help with the smoothness and distribution of the horsehair. The rubber also sticks better onto the surface of the acrylic wheel, as hair and plastic do not stick well to each other.</p>
+		<div id="chrisBeingDumb">
+			<img class="picture" src = "{{ url_for('static', filename='images/ugleBetty.jpg')}}"/>
+		</div>
+		<p>Finally we figured out the perfect plan to create this bow. We braided the horsehair and cut groves into the acrylic wheel to position the hair at opposite ends of the wheel. </p>
+		<div id="bowPics">
+			<img class="picture" src = "{{ url_for('static', filename='images/rapunzel.jpg')}}"/>
+		</div>
 	</div>
 
 	<div class="panel panel-default">
@@ -39,7 +46,7 @@
 	<div class="panel panel-default">
 		<h3>Critical Design Review - 11.19.13</h3>
 		<p>The goal for this design review was to make sure we had all of our critical subsystems working, or at least we have an idea of how to solve the critical problems.</p>
-		<p>Our critical subsystems included: transition from 1 string to 4 strings, addition of an amplifier, making sure the "string pulling" system works, and finally having all connections through the BeagleBone. We were able to have all of our critical subsystems ready. We were not able to get our bow wheel ready; however, we believed that our bow wheel was not a critical subsystem. </p>
+		<p>Our critical subsystems included: transition from 1 string to 4 strings, addition of an amplifier, making sure the "string pulling" system works, and finally having all connections through the Beagle Bone. We were able to have all of our critical subsystems ready. We were not able to get our bow wheel ready; however, we believed that our bow wheel was not a critical subsystem. </p>
 		<p style="font-size: 150%; text-align: center;"><a href="{{ url_for('static', filename='PDFs/CriticalDesignReview.pdf')}}" target="#">Copy of In-Class Presentation</a></p>
 		<img class="picture" src = "{{ url_for('static', filename='images/1stPrototype.jpg')}}" />
 		<p>Most of the feedback we've received from our design review were concerns about our bow wheel. Turns out that our bow wheel was a critical subsystem that we needed to find a solution to fast.</p>
