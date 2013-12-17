@@ -67,11 +67,24 @@
 							<img class="picture" src = "{{ url_for('static', filename='images/Taz.jpeg')}}"/>
 						</div>
 						<h5>Chris Joyce</h5>
-						<p>In addition to the engineering expertise, I learned a few really useful things about similarly-scoped projects that I'd like to pass on to anyone who might attempt a similar project in the future.
+						<p>
+							In addition to the engineering expertise, I learned a few really useful things about similarly-scoped projects that I'd like to pass on to anyone who might attempt a similar project in the future.
 							<ul>
+<<<<<<< HEAD
 							<li>First, prototype early and often.  It is far better to admit that you haven't yet thought of a mechanism for one specific part of the system and get a revision out with other parts that are thought of than delay while you wait to have something that is 'theoretically' perfect.</li>
 							<li>Second, be very afraid of the unknown.  We attempted to use a BeagleBone Black as our microcontroller, and it was a very bad decision.  It was finicky, barely worked, and needed 1-2 hours of reflash time every time it crashed.  Conventional wisdom is often that way because a lot of people have already made the same mistake you're about to.</li>
 							<li>Finally, very little is more important than team dynamics and working well as a team -- except for having fun while you work, and the two often go hand in hand.  We were all willing to put in large amounts of time outside of class -- often on the weekends -- because our meetings usually had a component of fun in them.  This also helped us deal with adversity; no one ever got shirty with anyone else, even when we were all frustrated.  Working with your friends doesn't always work well, but when it does, it works <i>really</i> well.</li>
+=======
+								<li>
+									First, prototype early and often.  It is far better to admit that you haven't yet thought of a mechanism for one specific part of the system and get a revision out with other parts that are thought of than delay while you wait to have something that is 'theoretically' perfect.
+								</li>
+								<li>
+									Second, be very afraid of the unknown.  We attempted to use a BeagleBone Black as our microcontroller, and it was a very bad decision.  It was finicky, barely worked, and needed 1-2 hours of reflash time every time it crashed.  Conventional wisdom is often that way because a lot of people have already made the same mistake you're about to.
+								</li>
+								<li>
+									Finally, very little is more important than team dynamics and working well as a team -- except for having fun while you work, and the two often go hand in hand.  We were all willing to put in large amounts of time outside of class -- often on the weekends -- because our meetings usually had a component of fun in them.  This also helped us deal with adversity; no one ever got shirty with anyone else, even when we were all frustrated.  Working with your friends doesn't always work well, but when it does, it works <i>really</i> well.
+								</li>
+>>>>>>> 6ead60c35867ebc0dffd09ad06e86a6b364b03f7
 							</ul>
 						</p>
 					</div>
@@ -91,7 +104,21 @@
 							<img class="picture" src = "{{ url_for('static', filename='images/BugsBunny.jpg')}}"/>
 						</div>
 						<h5>Kyle McConnaughay</h5>
-						<p>Reflection reflection blah blah blah.</p>
+						<p>
+							The biggest realization I had as a result of this project is that systems integration is <i>difficult</i>. As a team we had each subsystem (tension control, motor control, etc.) working fairly early on in the semester. Putting them all together in a robust way took weeks. I really liked the framework we implemented on the BeagleBone Black (asynchronous and interrupt-driven), but the implementation was very difficult because of the amount of coordination so many moving parts require in a time-dependent application. I have a newfound respect for people who design and create embedded systems for a living because it is so very different than development on Linux or Windows.
+						</p>
+						<p>
+							Another lesson I'll take into the future is that institutional support is an invaluable resource. At Olin a large portion of the student body and numerous professors have extensive experience with Arduino microcontrollers. Whenever anyone has a problem with code and/or hardware associated with an Arduino-controlled system, odds are somebody in the community knows how to help. If not, Arduino has a massive online community with numerous, well thought-out tutorials for many different applications. The BeagleBone Black is the antithesis of that. No Olin professors have done projects with it, very few students have even heard of it, and the online community is sorely lacking compared to the Arduino. I love what the BBB brings to the table in terms of its OS and support for Node, but when it didn't work as expected or crashed there were few resources available to help us resolve the issues. A lot of time was spent debugging things that would have been easily done in a different programming environment. Following the path well-traveled is a wise decision when attempting to do an ambitious project in a short time span.
+						</p>
+						<p>
+							The software developement process was motivated by agile principles learned at my internship last summer. I made tests for every new piece of functionality and frequently refactored code. I was careful to decouple the functionality of various objects, as well. For instance, a Servo object's sole responsibility was to take an 'angle' paramter and turn the servo to that angle. On the surface, it doesn't seem like a big deal, but if I had done this project last year I <i>know</i> that I wouldn't have given any thought to assigning the Servo object more responsibility. In that way it was a very different experience than previous coding projects that I've done. I really enjoyed the flexibility that design patterns afforded and the ease with which the code architecture took shape. This project confirmed for me that agile methodologies and design patterns are worth knowing and can streamline the software development process. 
+						</p>
+						<p>
+							The final outcome of the project is not as spectacular as I would have wished, but I feel that our difficulties stemmed mainly from the BBB's frustrating tendency to repeatedly fail. The rest of our process allowed us to recover from the failures of the BBB - regularly scheduled deadlines for intermediate deliverables (approximately one a week) made the project feel very agile and was reflected in very positive feedback to our initial and mid-semester design reviews. The design, too, was functional, as proved by our final prototype. I wish we had realized earlier that the BBB was not going to work for us, but until the weekend before the project was due we were still hopeful about its ability to work reliably. The code we wrote for the Arduino, though functional, was rushed and not as well-designed as the framework we had on the BBB.
+						</p>
+						<p>
+							To future POE teams, I say this. Start with an interesting problem and think carefully about how the system design will work. It is important to add functionality incrementally and to test early and often, so how can you compartmentalize the software, electrical and mechanical subsystems? I would also say that you should budget time to understand any technology with which nobody on your team has experience (multiple days to several weeks, depending on its complexity). For example, we received the BBB early in the semester but didn't start developing on it for a couple weeks because we accidentally overwrote the default operating system with a non-functional image and then had to learn about the bonescript API. Once we understood the basics we were able to prototype very rapidly, but the initial learning curve was quite steep. Last, make sure that you have intermediate goals for your project planned for the entire semester. It's okay if they change over the course of the project (I'd be surprised if they didn't), but being able to demonstrate tangible progress at the end of every week is very important to maintaining momentum.
+						</p>
 					</div>
 				</div>
 			</div>

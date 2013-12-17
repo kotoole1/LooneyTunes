@@ -14,7 +14,7 @@
 	<div class="container-fluid">
 		<div class="navbar navbar-fixed-top">
 		  <div class="navbar-inner">
-		    <a class="brand" href="{{ url_for('index') }}">LooneyTunes</a>
+		    <a class="brand" id="main-title" href="{{ url_for('index') }}">LooneyTunes</a>
 		    <ul class="nav pull-right">
 		      <li><a href="{{ url_for('design') }}">design</a></li>
 		      <li><a href="{{ url_for('timeline') }}">timeline</a></li>
@@ -24,17 +24,16 @@
 		  </div>
 		</div>
 		<div class="row-fluid body">
-			<div class="span2">
-				<p></p>
+			<div class="span2 page-border">
 			</div>
 			<div class="span8">
 				
-				<div>
+				<div class="main-content">
 					{% block body %}
 					{% endblock %}
 				</div>
 			</div>
-			<div class="span2">
+			<div class="span2 page-border">
 				<p></p>
 			</div>
 		</div>
