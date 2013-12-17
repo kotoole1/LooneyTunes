@@ -139,7 +139,24 @@
 							<img class="picture" src = "{{ url_for('static', filename='images/ElmerFudd.jpg')}}"/>
 						</div>
 						<h5>Kevin O'Toole</h5>
-						<p>Reflection reflection blah blah blah.</p>
+						<p>
+							Development of our violin has been as full of highs and lows as the music we play. The beginning of the project was a time of excitement. Our team was seemingly perfect for the project, and our ambitions were high. We had the ideal balance of electrical, mechanical, and software expertise for the task ahead, and were each capable of being strong leaders for the rest of the team in our areas of expertise. Bouncing optimism off of optimism, we developed a vision: a project that could play music on command from the website you’re reading right now, tuning its strings with the press of a button, and playing simultaneous melodies and harmonies for a number of songs. We imagined an instrument that could be displayed confidently in the hallway that anyone could start with their smartphone. We imagined an instrument that we never created.
+						</p>
+						<p>
+							Being fair, the final product is not far from that, and we were successful in areas we didn’t expect at the beginning. There was nothing catastrophic about our failures, and nothing shameful about the machine we created. We created a violin capable of playing any combination of strings, transitioning quickly between notes, giving position feedback, generating a tuning signal, and playing with a real horsehair bow. Yet the successes of our instrument were marred by the lack of a proper microcontroller to play its music well. We suffered the curse of the theremin, the carillon, and the 12-inch piano: wonderful contraptions lacking skilled players to bring out their true potential. 
+						</p>
+						<p>
+							The result of our endeavor was an unexpected lesson-filled fable on how to fall short of your goals while succeeding the whole way through. One of the most critical lessons learned is the importance of having a fully working system as soon as possible. We were heavily focused on the mechanical system from the start, and for good reasons. We had heard countless stories of POE teams sketchily fixing mechanical problems in the last week, and we knew that, in general, it’s easier to quickly change software than it is to change hardware. We also knew that our loftier goals were mechanical and electrical: controlling the tension of a high-load string with a cheap motor, independently moving each string into the bow, and generating a clean musical signal from a bridge made of plywood. With this in mind, we focused on rapid iteration of these problems, but we were more than halfway through the semester before we even had an operating system on our ideal microcontroller: the BeagleBone Black.
+						</p>
+						<p>
+							We also learned that user interface is important for more than just the end users; it makes building of early prototypes much easier. This lesson was learned the hardest with our complete lack of microcontroller for the majority of the project, but also learned in subtler ways throughout. For example, our audio protoboard had audio jacks for the end user to plug in any speaker and pickup, while the H-bridge protoboards had all wires soldered directly. Not only did the solid wires break when we moved the board around while prototyping, but it was impossible to change anything about the H-Bridge board without unsoldering the wires. If we had focused on that interface by soldering on headers on and using multiwire cables, then making adjustments would have been as easy as plugging and unplugging the speaker was.
+						</p>
+						<p>
+							Above all these, the biggest lesson gained from our project was the importance of robustness and longevity. POE projects have a tendency to try to create the perfect demo, building the project around the product. If we had flipped that on its head, and chosen the product around the project, we would have prioritized ease of maintenance, robustness, and long-term usability. The resulting goals would have been similar (replacing internet connectivity, perhaps, with a few big buttons), but the chosen microcontroller would have been the Arduino from the beginning, allowing us the time to create a system that met the rest of our goals. 
+						</p>
+						<p>
+							The fact that our robotic violin only plays one note at a time and doesn’t tune itself might seem to be silly complaints, considering the fact that <i>we just created a robotic violin.</i> However, from these shortcomings, we’ve learned valuable lessons applicable to a huge variety of tasks in engineering. Applied correctly, these lessons can ensure the next engineering project we take on succeeds the whole way through.
+						</p>
 					</div>
 				</div>
 			</div>
