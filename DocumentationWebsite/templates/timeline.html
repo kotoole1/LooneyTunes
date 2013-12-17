@@ -19,10 +19,8 @@
 		<div id="chrisBeingDumb">
 			<img class="picture" src = "{{ url_for('static', filename='images/ugleBetty.jpg')}}"/>
 		</div>
-		<p>Finally we figured out the perfect plan to create this bow. We braided the horsehair and cut groves into the acrylic wheel to position the hair at opposite ends of the wheel. </p>
-		<div id="bowPics">
-			<img class="picture" src = "{{ url_for('static', filename='images/rapunzel.jpg')}}"/>
-		</div>
+		<p>Finally we figured out the perfect plan to create this bow. We braided the horsehair and cut groves into the acrylic wheel to position the hair at opposite ends of the wheel. This way none of the hair has to be glued down, we have maximum contact between the bow and the strings, and we have good amount of friction between the horsehair and the strings.</p>
+		<img class="picture" src = "{{ url_for('static', filename='images/rapunzel.jpg')}}"/>
 	</div>
 
 	<div class="panel panel-default">
@@ -38,17 +36,19 @@
 		<div id="chrisBeingDumb">
 			<img class="picture" src = "{{ url_for('static', filename='images/Cute.jpg')}}"/>
 		</div>
-		<p>Once we've compiled all of our parts for our entire system, we began our assembly process.</p>
+		<p>Once we've compiled all of our parts for our entire system, we began our assembly process. In the meantime, we also tested our motors with the Beagle Bone.</p>
 		<img class="picture" src = "{{ url_for('static', filename='images/FullAssembly.JPG')}}"/>
-		<img class="picutre" src = "{{ url_for('static', filename='images/CloseUpOfGears.jpg')}}"/>	
+		<img class="picture" src = "{{ url_for('static', filename='images/CloseUpOfGears.jpg')}}"/>	
+		<img class="picture" src = "{{ url_for('static', filename='images/TestingMotorWithBone.JPG')}}" />
 	</div>
 
 	<div class="panel panel-default">
 		<h3>Critical Design Review - 11.19.13</h3>
 		<p>The goal for this design review was to make sure we had all of our critical subsystems working, or at least we have an idea of how to solve the critical problems.</p>
-		<p>Our critical subsystems included: transition from 1 string to 4 strings, addition of an amplifier, making sure the "string pulling" system works, and finally having all connections through the Beagle Bone. We were able to have all of our critical subsystems ready. We were not able to get our bow wheel ready; however, we believed that our bow wheel was not a critical subsystem. </p>
+		<p>Our critical subsystems included: transition from 1 string to 4 strings, addition of an amplifier, making sure the "string pulling" system works, and finally having all connections through the Beagle Bone. We were able to have all of our critical subsystems ready, except for the connection through the Beagle Bone. We believed that our bow wheel was not a critical subsystem.</p>
 		<p style="font-size: 150%; text-align: center;"><a href="{{ url_for('static', filename='PDFs/CriticalDesignReview.pdf')}}" target="#">Copy of In-Class Presentation</a></p>
-		<img class="picture" src = "{{ url_for('static', filename='images/1stPrototype.jpg')}}" />
+		<img class="picture" src = "{{ url_for('static', filename='images/1stPrototype.jpg')}}"/>
+		<img class="picture" src = "{{ url_for('static', filename='images/amplifier_diagram.jpg')}}"/>
 		<p>Most of the feedback we've received from our design review were concerns about our bow wheel. Turns out that our bow wheel was a critical subsystem that we needed to find a solution to fast.</p>
 		<p>For our bow, we believe we can apply the same characteristics from the bow of a hurdy gurdy to our bow.</p>
 	</div>
@@ -78,23 +78,31 @@
 	
 	<div class="panel panel-default">
 		<h3>Final One-String Prototype</h3>
-		<p> blah blah blah </p>
+		<p>Our final one-string prototype fixed some of the problems we encountered with our initial one-string prototype. BLAH BLAH BLAH BLAH</p>
+		<!-- <img class="picture" src = "{{ url_for('static', filename='images/.JPG')}}"/> -->
 	</div>
 	
 	<div class="panel panel-default">
 		<h3>Initial One-String Prototype</h3>
-		<p> blah blah blah </p>
+		<p>Our first prototype consists of just one string. This prototype was done mainly as a proof of concept. We wanted to make sure that our idea of changing the tension of the string with a motor and a worm gear does work the way we wanted it to.</p>
 		<img class="picture" src = "{{ url_for('static', filename='images/1stPrototypeComplete.JPG')}}"/>	
 		<img class="picture" src = "{{ url_for('static', filename='images/1stPrototypeBridge.JPG')}}"/>	
-		<img class="picture" src = "{{ url_for('static', filename='images/1stPrototypeSideTop.JPG')}}"/><img class="picture" src = "{{ url_for('static', filename='images/1stPrototypeFrontTop.JPG')}}"/>	
+		<img class="picture" src = "{{ url_for('static', filename='images/1stPrototypeSideTop.JPG')}}"/>
+		<div id="chrisBeingDumb">
+			<img class="picture" src = "{{ url_for('static', filename='images/1stPrototypeFrontTop.JPG')}}"/>
+		</div>
 	</div>
 
 	<div class="panel panel-default">
 		<h3>Initial Thoughts on Mechanical Design - 10.22.13</h3>
 		<p>Below are some of our initial ideas and testing of the tensioning of the string of our mechanical subsystem. We've decided to go with a worm gear to prevent back driving of the motor.</p>
-		<img class="picture" src = "{{ url_for('static', filename='images/WindingRender.jpg')}}" />
-		<img class="picture" src = "{{ url_for('static', filename='images/InitialTesting1.jpg')}}" />
-		<img class="picture" src = "{{ url_for('static', filename='images/InitialTesting2.jpg')}}" />
+		<img class="picture" src = "{{ url_for('static', filename='images/WindingRender.jpg')}}"/>
+		<div id="chrisBeingDumb">
+			<img class="picture" src = "{{ url_for('static', filename='images/InitialTesting1.jpg')}}"/>
+		</div>
+		<div id="chrisBeingDumb">
+			<img class="picture" src = "{{ url_for('static', filename='images/InitialTesting2.jpg')}}"/>
+		</div>
 	</div>
 
 {% endblock %}
