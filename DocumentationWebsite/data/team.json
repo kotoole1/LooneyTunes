@@ -4,7 +4,7 @@
 		"thumb": "images/philicia.jpg",
 		"role": "Project Manager, mechanical subsystem",
 		"bio": "From sunny Texas, Philicia has quite a bit of artistic talent.  In addition to her contributions to the mechanical system, Philicia has applied her fantastic organizational skills to help the team stay on track, and helped set the direction of the team through making sure that the subsystems are accounting for each other.",
-		"technical": "A bioengineer, Philicia's main technical interests lie in biomedical designs, biomechanics, and pharmaceutical inventions",
+		"technical": "A bioengineer, Philicia's main technical interests lie in biomedical designs, biomechanics, and pharmaceutical inventions.",
 		"email": "philicia.chow@students.olin.edu"
 	},
 	{
@@ -12,7 +12,7 @@
 		"thumb": "images/Allie.jpg",
 		"role": "Software Co-Lead",
 		"bio": "Hailing from Colorado, Allie spends much of her time talking about how nothing on the East Coast is quite as good as it is out West. Yet she's still taken aback by winter in Boston. As an actual violinist, she provided much-needed musical advice throughout the project in addition to her technical contributions to the software system.",
-		"technical": "An engineer with computing, Allie enjoys working on mobile apps, artificial intelligence, and telecommunications",
+		"technical": "An engineer with computing, Allie enjoys working on mobile apps, artificial intelligence, and telecommunications.",
 		"email": "elizabeth.duncan@students.olin.edu"
 	},
 	{
@@ -28,7 +28,7 @@
 		"thumb": "images/kyle.jpg",
 		"role": "Software Co-Lead",
 		"bio": "A Bostonian by sports loyalties (the only metric that matters), Kyle is the musical director of Olin College's a capella group.  It took the team a while to sell him on the idea that music actually needed instruments, let alone robotic ones.  He contributes heavily to the software system with its ever changing lineup of microcontrollers.",
-		"technical": "A engineer with computing, Kyle spends his time focusing on artificial intelligence and data science",
+		"technical": "A engineer with computing, Kyle spends his time focusing on artificial intelligence and data science.",
 		"email": "kyle.mcconnaughay@students.olin.edu"
 	},
 	{
