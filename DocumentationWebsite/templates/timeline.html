@@ -6,18 +6,27 @@
 	
 	<div class="panel panel-default">
 		<h3>Getting Ready for Demo Day</h3>
-		
+		<p>Things seemed to lighten up after our drastic switch from the Beagle Bone to the Arduino Mega. We finally got some code working and implimented into our system. And we've managed to play Twinkle Twinkle Little Star with our instrument!</p>
+		<img class="picture" src = "{{ url_for('static', filename='images/finalVersion.jpg')}}"/>
+		<img class="picture" src = "{{ url_for('static', filename='images/ChrisBeingHappy.jpg')}}"/>
 	</div>
 	
 	<div class="panel panel-default">
+		<h3>Makeover of the Bow</h3>
+		<p></p><!-- 
+		<img class="picture" src = "{{ url_for('static', filename='images/BrokenString.JPG')}}"/>
+		<img class="picture" src = "{{ url_for('static', filename='images/BrokenString.JPG')}}"/> -->
+	</div>
+
+	<div class="panel panel-default">
 		<h3>Decision to Move to Arduino Mega</h3>
-		<p> Today is a sad day for Team Looney Tunes. For around the 5th time, the Beagle Bone has crashed while we were trying to integrate it with the entire system. It works with each individual part, but freezes when asked to perform complex tasks. We've had to re-flash it several times in order to resolve it being frozen. As shown in the image below, sometimes the microprocessor will freeze with only two lights on. (Normal operation is with all lights blinking.) Overall, although the Beagle Bone's features are perfect for what we want to do, it is not reliable enough for our robotic violin. We have switched to the Arduino Mega. This microprocessor will not connect to the web as we wanted to, but will reliably work.</p>
+		<p>Today is a sad day for Team Looney Tunes. For around the 5th time, the Beagle Bone has crashed while we were trying to integrate it with the entire system. It works with each individual part, but freezes when asked to perform complex tasks. We've had to re-flash it several times in order to resolve it being frozen. As shown in the image below, sometimes the microprocessor will freeze with only two lights on. (Normal operation is with all lights blinking.) Overall, although the Beagle Bone's features are perfect for what we want to do, it is not reliable enough for our robotic violin. We have switched to the Arduino Mega. This microprocessor will not connect to the web as we wanted to, but will reliably work.</p>
 		<img class="picutre" src = "{{ url_for('static', filename='images/FailingBeagleBone.JPG')}}"/>
 	</div>
 
 	<div class="panel panel-default">
 		<h3>Final Prototype Assembly</h3>
-		<p>Since Thanksgiving Break, we have been working on our final prototype. We fixed things we didn't like and things that were problematic from the previous prototype. These changes included obtaining warped wood, bent bridge, design for encoder mounting, and adding secondary encoders.<p>
+		<p>Since Thanksgiving Break, we have been working on our final prototype. We fixed things we didn't like and things that were problematic from the previous prototype. These changes included obtaining nice flat wood, adding more support to decrease the bending of the bridge, designing a new encoder mounting, and adding secondary encoders.<p>
 		<img class="picture" src = "{{ url_for('static', filename='images/AllParts.JPG')}}"/>
 		<div id="chrisBeingDumb">
 			<img class="picture" src = "{{ url_for('static', filename='images/Cute.jpg')}}"/>
@@ -31,7 +40,7 @@
 		<h3>Critical Design Review - 11.19.13</h3>
 		<p>The goal for this design review was to make sure we had all of our critical subsystems working, or at least we have an idea of how to solve the critical problems.</p>
 		<p>Our critical subsystems included: transition from 1 string to 4 strings, addition of an amplifier, making sure the "string pulling" system works, and finally having all connections through the BeagleBone. We were able to have all of our critical subsystems ready. We were not able to get our bow wheel ready; however, we believed that our bow wheel was not a critical subsystem. </p>
-		<p style="font-size: 150%; text-align: center;"><a href="{{ url_for('static', filename='PDFs/CriticalReviewPowerPoint.pdf')}}" target="#">Copy of In-Class Presentation</a></p>
+		<p style="font-size: 150%; text-align: center;"><a href="{{ url_for('static', filename='PDFs/CriticalDesignReview.pdf')}}" target="#">Copy of In-Class Presentation</a></p>
 		<img class="picture" src = "{{ url_for('static', filename='images/1stPrototype.jpg')}}" />
 		<p>Most of the feedback we've received from our design review were concerns about our bow wheel. Turns out that our bow wheel was a critical subsystem that we needed to find a solution to fast.</p>
 		<p>For our bow, we believe we can apply the same characteristics from the bow of a hurdy gurdy to our bow.</p>
@@ -45,7 +54,8 @@
 
 	<div class="panel panel-default">
 		<h3>Initial Four-String Prototype</h3>
-		<p> blah blah blah </p>
+		<p>After the Preliminary Design Review, we immediately began CAD-ing our four-string prototype. Once everything was good to go, we began to assembly our very first four-string prototype.</p>
+		<img class="picture" src = "{{ url_for('static', filename='images/3rdPrototypeAssembling.JPG')}}" />
 
 	</div>
 
