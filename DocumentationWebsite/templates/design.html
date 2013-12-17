@@ -87,16 +87,25 @@
 						<h3>Software Overview</h3>
 						<p>Software was implemented on the Arduino Mega in order to control the servos, tension motors and bow motor.</p>
 						<img class="picture" src = "{{ url_for('static', filename='images/softwareSys.PNG')}}"/>
-						<p> Before running, the user selects a song from a list of booleans and compiles the sketch to run on the robotic violin.</p>
+						<p> Before running, the user selects a song from a list of booleans and compiles the sketch to run on the robotic violin as shown in the image below. This code is then loaded onto the robotic violin through the USB cable to the Arduino Mega.</p>
 						<div class="centered">
 							<img class="code-sample" src = "{{ url_for('static', filename='images/songs.PNG')}}"/>
 						</div>
+						<p>We used the encoders to record the relative positions of notes for each string. When playing, the encoders also give feedback on the motors' positions. We used <a href="https://github.com/medecau/QuadEncoder">medecau's library</a> for the rotary encoders.</p>
 						<div class="centered">
 							<img class="code-sample" src = "{{ url_for('static', filename='images/quadencoders.PNG')}}"/>
 						</div>
+						<p>For each song, actions necessary for the robotic violin were listen. Each note was commented. For example, as seen in the image below, for the starting A of Twinkle, the following actions had to occur:</p>
+						<ul>
+							<li>The bow needed to be started and all strings moved out of contact with the bow</li>
+							<li>The A string servo had to push the string into contact with the moving bow</li>
+							<li>The A string had to be played for a specified amount of time</li>
+							<li>The A string servo had to lift up the string out of contact with the moving bow</li>
+						</ul>
 						<div class="centered">
 							<img class="code-sample" src = "{{ url_for('static', filename='images/song.PNG')}}"/>
 						</div>
+						<p>Each of the functions were named as plainly as possible in order to avoid confusion. An example of the StartSong function, which starts the bow moving and moves all the strings out of contact with the bow, is such an example.</p>
 						<div class="centered">
 							<img class="code-sample" src = "{{ url_for('static', filename='images/sameFunc.PNG')}}"/>
 						</div>
