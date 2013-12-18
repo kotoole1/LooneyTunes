@@ -36,7 +36,7 @@
 					<div class="panel panel-default">
 						<h3>Mechanical Overview</h3>
 						<p>We used an iterative design process to get from a single string-winding assembly to an full musical instrument.  An overview of our process is below, a full drawing package is at the bottom.</p>
-						<img class="picture" src = "{{ url_for('static', filename='images/WindingRender.jpg')}}"/>
+						<img class="picture" src = "{{ url_for('static', filename='images/WindingRender.JPG')}}"/>
 						<p>This is our very first (alpha) revision, put together a week after beginning the project to examine common pitfalls immediately.  Notable flaws included lack of a dedicated motor mount, and a poor design for torque transmission.</p>
 						<img class="picture" src = "{{ url_for('static', filename='images/wind-assy.png')}}"/>
 						<p>This is our next prototype of our winding mechanism, addressing the main pitfalls of the first revision.  Major changes are a dedicated encoder mount to allow for counting of revolutions (and therefore tune of the string), the addition of a key for better torque transfer from the drive gear to the string hub, and an idler gear to resist cantilevering of the worm.</p>
@@ -86,14 +86,14 @@
 					<div class="panel panel-default">
 						<h3>Software Overview</h3>
 						<p>Software was implemented on the Arduino Mega in order to control the servos, tension motors and bow motor.</p>
-						<img class="picture" src = "{{ url_for('static', filename='images/softwareSys.PNG')}}"/>
+						<img class="picture" src = "{{ url_for('static', filename='images/softwareSys.png')}}"/>
 						<p> Before running, the user selects a song from a list of booleans and compiles the sketch to run on the robotic violin as shown in the image below. This code is then loaded onto the robotic violin through the USB cable to the Arduino Mega.</p>
 						<div class="centered">
-							<img class="code-sample" src = "{{ url_for('static', filename='images/songs.PNG')}}"/>
+							<img class="code-sample" src = "{{ url_for('static', filename='images/songs.png')}}"/>
 						</div>
 						<p>We used the encoders to record the relative positions of notes for each string. When playing, the encoders also give feedback on the motors' positions. We used <a href="https://github.com/medecau/QuadEncoder">medecau's library</a> for the rotary encoders.</p>
 						<div class="centered">
-							<img class="code-sample" src = "{{ url_for('static', filename='images/quadencoders.PNG')}}"/>
+							<img class="code-sample" src = "{{ url_for('static', filename='images/quadencoders.png')}}"/>
 						</div>
 						<p>For each song, actions necessary for the robotic violin were listen. Each note was commented. For example, as seen in the image below, for the starting A of Twinkle, the following actions had to occur:</p>
 						<ul>
@@ -103,11 +103,11 @@
 							<li>The A string servo had to lift up the string out of contact with the moving bow</li>
 						</ul>
 						<div class="centered">
-							<img class="code-sample" src = "{{ url_for('static', filename='images/song.PNG')}}"/>
+							<img class="code-sample" src = "{{ url_for('static', filename='images/song.png')}}"/>
 						</div>
 						<p>Each of the functions were named as plainly as possible in order to avoid confusion. An example of the StartSong function, which starts the bow moving and moves all the strings out of contact with the bow, is such an example.</p>
 						<div class="centered">
-							<img class="code-sample" src = "{{ url_for('static', filename='images/sameFunc.PNG')}}"/>
+							<img class="code-sample" src = "{{ url_for('static', filename='images/sameFunc.png')}}"/>
 						</div>
 					</div>
 				</div>
